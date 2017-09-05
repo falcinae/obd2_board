@@ -230,6 +230,35 @@ unsigned char GprsStartSequence (void)
     return 0;  
 }
 
+unsigned char GprsReconnectSequence (void)
+{
+    char bufferToSend[50];
+    char *bufferRead;
+
+    if(CheckSignalQuality ())
+    {
+        return ERROR_CODE_CHECK_SIGNAL_QUALITY;
+    }
+    if(EstablishGprsConnection ())
+    {
+        return ERROR_CODE_ESTABLISH_GPRS_CONNECTION;
+    }
+    if(CheckServerConnection ())
+    {
+        return ERROR_CODE_CONNECT_WITH_OUR_SERVER;
+    }
+    if(CheckServerConnection ())
+    {
+        return ERROR_CODE_CHECK_SERVER_CONNECTION;
+    }
+    if(OpenGprsSession ())
+    {
+        return ERROR_CODE_OPEN_SESSION;
+    }
+    
+    return 0;  
+}
+
 unsigned char GprsCloseSequence (void)
 {    
     if(CloseGprsSession ())

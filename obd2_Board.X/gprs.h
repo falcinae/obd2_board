@@ -52,6 +52,7 @@ unsigned char ConnectWithOurServer (void);
 unsigned char OpenGprsSession (void);
 unsigned char CloseGprsSession (void);
 unsigned char CloseGprsConnection (void);
+unsigned char GprsReconnectSequence (void);
 
 unsigned char GprsStartSequence (void);
 unsigned char GprsCloseSequence (void);
