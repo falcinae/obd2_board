@@ -31,8 +31,24 @@ extern "C" {
 
 #define AT_OK_RESPONSE                              "OK"
 
-unsigned char ConnectWithObdInterpreter (void);
+   
+    
+typedef struct OBDData {
+    char *speedOBD;
+    char *rpmOBD;
+    char *tempOBD;
+    char *throttleOBD;
+    char *milLamp;
+    char *numDTCs;
+    char *vinOBD;
+    char *pressureOBD;
+    } OBD_Data;
+    
+extern OBD_Data OBD_Value;
+
 void ConfigObdPort (void);
+
+unsigned char ConnectWithObdInterpreter (void);
 void ReadSpeedFromOBD (char *speedOBD);
 void ReadRpmFromOBD (char *rpmOBD);
 void ReadTemperatureFromOBD (char *tempOBD);

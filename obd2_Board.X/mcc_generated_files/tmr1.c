@@ -146,11 +146,9 @@ uint16_t TMR1_Counter16BitGet( void )
     return( TMR1 );
 }
 
-
-volatile bit Timer1_1s_Tick;
 void __attribute__ ((weak)) TMR1_CallBack(void)
 {
-    Timer1_1s_Tick = 1;
+    //Timer1_1s_Tick = 1;
 }
 
 void TMR1_Start( void )

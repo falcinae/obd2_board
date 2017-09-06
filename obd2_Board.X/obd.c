@@ -11,26 +11,13 @@ void ConfigObdPort (void)
 
 void RequestDataFromOBD (void)
 {
-    char *buffeTemp;
-    
-    struct obd {
-    char *speedOBD;
-    char *rpmOBD;
-    char *tempOBD;
-    char *throttleOBD;
-    char *milLamp;
-    char *numDTCs;
-    char *vinOBD;
-    char *pressureOBD;
-    } OBD_Data;    
-    
-    ReadSpeedFromOBD (OBD_Data.speedOBD);
-    ReadRpmFromOBD (OBD_Data.rpmOBD);
-    ReadTemperatureFromOBD (OBD_Data.tempOBD);
-    ReadThrottleFromOBD (OBD_Data.throttleOBD);
-    ReadDTCsFromOBD (OBD_Data.milLamp, OBD_Data.numDTCs);
-    ReadVINFromOBD (OBD_Data.vinOBD);
-    ReadPressureFromOBD (OBD_Data.pressureOBD);
+    ReadSpeedFromOBD (OBD_Value.speedOBD);
+    ReadRpmFromOBD (OBD_Value.rpmOBD);
+    ReadTemperatureFromOBD (OBD_Value.tempOBD);
+    ReadThrottleFromOBD (OBD_Value.throttleOBD);
+    ReadDTCsFromOBD (OBD_Value.milLamp, OBD_Value.numDTCs);
+    ReadVINFromOBD (OBD_Value.vinOBD);
+    ReadPressureFromOBD (OBD_Value.pressureOBD);
     
     return;
 }

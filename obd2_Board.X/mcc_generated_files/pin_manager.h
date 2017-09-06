@@ -2537,6 +2537,152 @@
 #define _2G_EMERGENCY_OFF_SetDigitalOutput() _TRISE1 = 0
 /**
   @Summary
+    Sets the GPIO pin, RE2, high using LATE2.
+
+  @Description
+    Sets the GPIO pin, RE2, high using LATE2.
+
+  @Preconditions
+    The RE2 must be set to an output.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    // Set RE2 high (1)
+    ENABLE_BAT_CHG_SetHigh();
+    </code>
+
+*/
+#define ENABLE_BAT_CHG_SetHigh()          _LATE2 = 1
+/**
+  @Summary
+    Sets the GPIO pin, RE2, low using LATE2.
+
+  @Description
+    Sets the GPIO pin, RE2, low using LATE2.
+
+  @Preconditions
+    The RE2 must be set to an output.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    // Set RE2 low (0)
+    ENABLE_BAT_CHG_SetLow();
+    </code>
+
+*/
+#define ENABLE_BAT_CHG_SetLow()           _LATE2 = 0
+/**
+  @Summary
+    Toggles the GPIO pin, RE2, using LATE2.
+
+  @Description
+    Toggles the GPIO pin, RE2, using LATE2.
+
+  @Preconditions
+    The RE2 must be set to an output.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    // Toggle RE2
+    ENABLE_BAT_CHG_Toggle();
+    </code>
+
+*/
+#define ENABLE_BAT_CHG_Toggle()           _LATE2 ^= 1
+/**
+  @Summary
+    Reads the value of the GPIO pin, RE2.
+
+  @Description
+    Reads the value of the GPIO pin, RE2.
+
+  @Preconditions
+    None.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    uint16_t portValue;
+
+    // Read RE2
+    postValue = ENABLE_BAT_CHG_GetValue();
+    </code>
+
+*/
+#define ENABLE_BAT_CHG_GetValue()         _RE2
+/**
+  @Summary
+    Configures the GPIO pin, RE2, as an input.
+
+  @Description
+    Configures the GPIO pin, RE2, as an input.
+
+  @Preconditions
+    None.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    // Sets the RE2 as an input
+    ENABLE_BAT_CHG_SetDigitalInput();
+    </code>
+
+*/
+#define ENABLE_BAT_CHG_SetDigitalInput()  _TRISE2 = 1
+/**
+  @Summary
+    Configures the GPIO pin, RE2, as an output.
+
+  @Description
+    Configures the GPIO pin, RE2, as an output.
+
+  @Preconditions
+    None.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    // Sets the RE2 as an output
+    ENABLE_BAT_CHG_SetDigitalOutput();
+    </code>
+
+*/
+#define ENABLE_BAT_CHG_SetDigitalOutput() _TRISE2 = 0
+/**
+  @Summary
     Sets the GPIO pin, RE6, high using LATE6.
 
   @Description

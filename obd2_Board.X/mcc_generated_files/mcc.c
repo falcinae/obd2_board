@@ -98,8 +98,8 @@ void SYSTEM_Initialize(void)
     SPI2_Initialize();
     UART4_Initialize();
     ADC1_Initialize();
-    RTCC_Initialize();
     TMR1_Initialize();
+    RTCC_Initialize();
 }
 
 void OSCILLATOR_Initialize(void)

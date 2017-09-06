@@ -11,9 +11,10 @@ void ConfigGprsPort (void)
 
 unsigned char CheckSIM (void)
 {
-    char *bufferToSend;
+    char bufferToSend[50] = {};
     char *bufferRead;
     
+    memset(bufferToSend, 0, 50);
     sprintf(bufferToSend, "%s", AT_COMMAND_CHECK_PIN);
     UART3_WriteBuffer(bufferToSend, strlen(bufferToSend));
     UART3_ReadBuffer(bufferRead, 4);
@@ -29,9 +30,10 @@ unsigned char CheckSIM (void)
 
 unsigned char CheckNetwork (void)
 {
-    char bufferToSend[50];
+    char bufferToSend[50] = {};
     char *bufferRead;
     
+    memset(bufferToSend, 0, 50);
     sprintf(bufferToSend, "%s", AT_COMMAND_CHECK_NETWORK);
     UART3_WriteBuffer(bufferToSend, strlen(bufferToSend));
     UART3_ReadBuffer(bufferRead, 4);
@@ -47,9 +49,10 @@ unsigned char CheckNetwork (void)
 
 unsigned char CheckSignalQuality (void)
 {
-    char bufferToSend[50];
+    char bufferToSend[50] = {};
     char *bufferRead;
     
+    memset(bufferToSend, 0, 50);
     sprintf(bufferToSend, "%s", AT_COMMAND_CHECK_SIGNAL_QUALITY);
     UART3_WriteBuffer(bufferToSend, strlen(bufferToSend));
     UART3_ReadBuffer(bufferRead, 4);
@@ -65,9 +68,10 @@ unsigned char CheckSignalQuality (void)
 
 unsigned char RetrieveNetworkOperator (void)
 {
-    char bufferToSend[50];
+    char bufferToSend[50] = {};
     char *bufferRead;
     
+    memset(bufferToSend, 0, 50);
     sprintf(bufferToSend, "%s", AT_COMMAND_RETRIEVE_OPERATOR);
     UART3_WriteBuffer(bufferToSend, strlen(bufferToSend));
     UART3_ReadBuffer(bufferRead, 4);
@@ -83,9 +87,10 @@ unsigned char RetrieveNetworkOperator (void)
 
 unsigned char EstablishGprsConnection (void)
 {
-    char bufferToSend[50];
+    char bufferToSend[50] = {};
     char *bufferRead;
     
+    memset(bufferToSend, 0, 50);
     sprintf(bufferToSend, "%s", AT_COMMAND_ESTABLISH_GPRS_CONNECTION);
     UART3_WriteBuffer(bufferToSend, strlen(bufferToSend));
     UART3_ReadBuffer(bufferRead, 4);
@@ -101,9 +106,10 @@ unsigned char EstablishGprsConnection (void)
 
 unsigned char ConnectWithOurServer (void)
 {
-    char bufferToSend[50];
+    char bufferToSend[50] = {};
     char *bufferRead;
     
+    memset(bufferToSend, 0, 50);
     sprintf(bufferToSend, "%s", AT_COMMAND_CONNECT_WITH_OUR_SERVER);
     UART3_WriteBuffer(bufferToSend, strlen(bufferToSend));
     UART3_ReadBuffer(bufferRead, 4);
@@ -119,9 +125,10 @@ unsigned char ConnectWithOurServer (void)
 
 unsigned char CheckServerConnection (void)
 {
-    char bufferToSend[50];
+    char bufferToSend[50] = {};
     char *bufferRead;
     
+    memset(bufferToSend, 0, 50);
     sprintf(bufferToSend, "%s", AT_COMMAND_CHECK_SERVER_CONNECTION);
     UART3_WriteBuffer(bufferToSend, strlen(bufferToSend));
     UART3_ReadBuffer(bufferRead, 4);
@@ -137,9 +144,10 @@ unsigned char CheckServerConnection (void)
 
 unsigned char OpenGprsSession (void)
 {
-    char bufferToSend[50];
+    char bufferToSend[50] = {};
     char *bufferRead;
     
+    memset(bufferToSend, 0, 50);
     sprintf(bufferToSend, "%s", AT_COMMAND_OPEN_SESSION);
     UART3_WriteBuffer(bufferToSend, strlen(bufferToSend));
     UART3_ReadBuffer(bufferRead, 4);
@@ -155,9 +163,10 @@ unsigned char OpenGprsSession (void)
 
 unsigned char CloseGprsSession (void)
 {
-    char bufferToSend[50];
+    char bufferToSend[50] = {};
     char *bufferRead;
     
+    memset(bufferToSend, 0, 50);
     sprintf(bufferToSend, "%s", AT_COMMAND_CLOSE_SESSION);
     UART3_WriteBuffer(bufferToSend, strlen(bufferToSend));
     UART3_ReadBuffer(bufferRead, 4);
@@ -173,9 +182,10 @@ unsigned char CloseGprsSession (void)
 
 unsigned char CloseGprsConnection (void)
 {
-    char *bufferToSend;
+    char bufferToSend[50] = {};
     char *bufferRead;
     
+    memset(bufferToSend, 0, 50);
     sprintf(bufferToSend, "%s", AT_COMMAND_CLOSE_GPRS_CONNECTION);
     UART3_WriteBuffer(bufferToSend, strlen(bufferToSend));
     UART3_ReadBuffer(bufferRead, 4);
@@ -191,9 +201,6 @@ unsigned char CloseGprsConnection (void)
 
 unsigned char GprsStartSequence (void)
 {
-    char bufferToSend[50];
-    char *bufferRead;
-
     if(CheckSIM ())
     {
         return ERROR_CODE_CHECK_PIN;
@@ -232,9 +239,6 @@ unsigned char GprsStartSequence (void)
 
 unsigned char GprsReconnectSequence (void)
 {
-    char bufferToSend[50];
-    char *bufferRead;
-
     if(CheckSignalQuality ())
     {
         return ERROR_CODE_CHECK_SIGNAL_QUALITY;

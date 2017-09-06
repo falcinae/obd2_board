@@ -16,11 +16,12 @@ void ReadGpsGprmcCommand (char *gpsDate, char *gpsTime,
     char bufferRead[100];
     char *token;
     char bufferToken[12][20];
+    const char s[2] = ",";
     unsigned int i = 0;
     
     UART2_ReadBuffer(bufferRead, 70);
     
-    token = strtok(bufferRead, ',');
+    token = strtok(bufferRead, s);
     memcpy(bufferToken[0], token, strlen(token));
     i = 1;
     while( bufferToken[i] != NULL ) 

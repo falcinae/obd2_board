@@ -4,3 +4,7 @@
 *.xml
 *.hex
 *.elf
+*.map
+*.map
+obd2_Board.X/dist/default/production/obd2_Board.X.production.map
+*.map

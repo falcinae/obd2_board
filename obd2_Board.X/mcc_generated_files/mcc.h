@@ -48,19 +48,19 @@
 #include "pin_manager.h"
 #include <stdint.h>
 #include <stdbool.h>
-#include "interrupt_manager.h"
-#include "traps.h"
-#include "ext_int.h"
-#include "rtcc.h"
 #include "tmr1.h"
-#include "uart2.h"
-#include "uart3.h"
-#include "uart1.h"
 #include "i2c1.h"
 #include "spi1.h"
-#include "adc1.h"
-#include "uart4.h"
+#include "uart1.h"
+#include "uart2.h"
 #include "spi2.h"
+#include "ext_int.h"
+#include "uart3.h"
+#include "rtcc.h"
+#include "uart4.h"
+#include "interrupt_manager.h"
+#include "traps.h"
+#include "adc1.h"
 
 #define _XTAL_FREQ  29491200UL
 

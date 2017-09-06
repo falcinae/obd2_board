@@ -45,12 +45,31 @@
 #include "mcc_generated_files/mcc.h"
 #include "FatFS/diskio.h"
 #include "FatFS/ff.h"
+#include "obd.h"
+#include "gps.h"
+#include "gprs.h"
 #include <stdio.h>
 
-#define _1S_TIMER1_TICK             1
+#define _1S_TIMER1_TICK                 1
 
-extern volatile bit Timer1_1s_Tick;
+#define VREF                            3.30
+#define ADC_BIT_RESOLUTION              10
+#define STEPS_ADC_RESOLUTION            1024
 
+#define STOPPED_CAR_MINIMUM_VBAT_VALUE  11.8
+#define STOPPED_CAR_MAXIMUM_VBAT_VALUE  12.3
+
+#define ONTRIP_CAR_MINIMUM_VBAT_VALUE   13.8
+#define ONTRIP_CAR_MAXIMUM_VBAT_VALUE   14.4
+
+
+unsigned char Timer1_1s_Tick = 0;
+
+OBD_Data OBD_Value;
+
+void MeasureIgnitionLevel (float *ignValue);
+unsigned char IsOnTrip (void);
+unsigned char ReStartSystem (void);
 
 //FIL fil;       /* File object */
 //char line[82]; /* Line buffer */
@@ -64,42 +83,89 @@ extern volatile bit Timer1_1s_Tick;
 
 void GoToSleep (void)
 {
+    //Deactivate 3V3 Peripheral Power and 3V8 Modem Power
+    _3V3_PERIPH_CTRL_SetLow();
+    _3V8_MODEM_CTRL_SetLow();
+     
+    //Deactivate battery charge
+    ENABLE_BAT_CHG_SetLow();
+    
+    //Enter microcontroller in Sleep mode
+    Sleep();
+
     return;
 }
 
-void ReStartSystem (void)
+unsigned char ReStartSystem (void)
 {
-    return;
+    //Re-Activate 3V3 Peripheral Power and 3V8 Modem Power
+    _3V3_PERIPH_CTRL_SetHigh();
+    _3V8_MODEM_CTRL_SetHigh();
+     
+    //Re-Activate battery charge
+    ENABLE_BAT_CHG_SetHigh();
+    
+    if (!ConnectWithObdInterpreter ())
+        return 0;
+    else
+        return 1;
 }
 
 unsigned char IsOnTrip (void)
 {
-    return 0;
+    float ignValue = 0;
+    
+    MeasureIgnitionLevel (&ignValue);
+    
+    if (ignValue > ONTRIP_CAR_MINIMUM_VBAT_VALUE) 
+        return 1;
+    else
+        return 0;
 }
 
-
-
-// Rutinas GPS
 void RequestDataFromGPS (void)
 {
+
     return;
 }
 void ReadPositionData (void)
 {
     return;
 }
-// Rutinas GPS
 
-//Rutina OBD
-void ReadStartTripData (void)
+void ReadTripData(void)
 {
-    return;
+    RequestDataFromOBD();
+
+    return;    
 }
 
+void MeasureIgnitionLevel (float *ignValue)
+{
+    unsigned int adcValue = 0;
+
+    CAR_BAT_LEVEL_SetHigh();
+    ADC1_ChannelSelect(ADC1_CAR_BAT_LEVEL);
+    ADC1_Start();
+    while(ADC1_IsConversionComplete());
+    adcValue = ADC1_ConversionResultGet();
+    ADC1_Stop();
+    CAR_BAT_LEVEL_SetLow();
+    
+    *ignValue = (float) (VREF/STEPS_ADC_RESOLUTION) * adcValue;
+}
 
 int main(void)
 {
     unsigned char resetTrip = 0;
+    
+    char *gpsDate;
+    char *gpsTime;
+    char *northSouth;
+    char *gpsLongitude;
+    char *gpsLatitude;
+    char *eastWest;
+    
     
     // initialize the device
     SYSTEM_Initialize();
@@ -127,28 +193,13 @@ int main(void)
                 if (!resetTrip)
                 {
                     ReStartSystem();
-                    ReadStartTripData(); //PIDs Supported??
                     resetTrip = 1;
                 }
 
-                //GetTripData();
+                ReadTripData();
+                ReadGpsGprmcCommand (gpsDate, gpsTime, gpsLatitude, northSouth, gpsLongitude, eastWest);
                 //SendTripData();
                 //StoreTripData();
-               
-                /*
-                //ToDo Something
-                switch (TMR1_SoftwareCounterGet())
-                {
-                    //case _250MS:
-                    //    break;
-                    case _1S_TIMER1_TICK:
-                        TMR1_SoftwareCounterClear();
-
-                        break;
-                    //case _10S:
-                    //    break;
-                }
-                */ 
             }
         }
         else

@@ -61,6 +61,8 @@
 
 #define TMR1_INTERRUPT_TICKER_FACTOR    1
 
+extern unsigned char Timer1_1s_Tick;
+
 /**
   Section: Interface Routines
 */

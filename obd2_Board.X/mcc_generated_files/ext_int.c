@@ -34,33 +34,13 @@
    Section: External Interrupt Handlers
  */
 /**
-  Interrupt Handler for EX_INT0 - INT0
-*/
-void __attribute__ ( ( interrupt, no_auto_psv ) ) _INT0Interrupt(void)
-{
-    //***User Area Begin->code: INT0 - External Interrupt 0***
-
-    //***User Area End->code: INT0 - External Interrupt 0***
-    EX_INT0_InterruptFlagClear();
-}
-/**
     Section: External Interrupt Initializers
  */
 /**
     void EXT_INT_Initialize(void)
 
     Initializer for the following external interrupts
-    INT0
 */
 void EXT_INT_Initialize(void)
 {
-    /*******
-     * INT0
-     * Clear the interrupt flag
-     * Set the external interrupt edge detect
-     * Enable the interrupt, if enabled in the UI. 
-     ********/
-    EX_INT0_InterruptFlagClear();   
-    EX_INT0_NegativeEdgeSet();
-    EX_INT0_InterruptEnable();
 }
