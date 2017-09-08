@@ -50,7 +50,7 @@ void ConfigGprsPort (void)
  ************************************************************************/
 void Gprs_SendMessageReadResponse (char *bufferIn, char *bufferOut)
 {
-    char *bufferTemp;
+    char bufferTemp[50] = {};
     
     UART3_WriteBuffer(bufferIn, strlen(bufferIn));
     UART3_ReadBuffer(bufferTemp, 50);

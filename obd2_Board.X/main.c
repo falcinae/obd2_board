@@ -20,6 +20,8 @@ Lista de modificaciones:
 #include "obd.h"
 #include "gps.h"
 #include "gprs.h"
+#include "fatfs.h"
+#include "sdcard.h"
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
@@ -48,7 +50,7 @@ unsigned char ReStartSystem (void);
 unsigned char IsOnTrip (void);
 void MeasureIgnitionLevel (float *ignValue);
 
-void StoreTripData (void);
+void StoreTripData (char *buffer);
 void SendTripData (char *dataToSend);
 void RequestConfigurationFromHost (void);
 
@@ -183,9 +185,9 @@ void MeasureIgnitionLevel (float *ignValue)
     Parametros
         char *pressureOBD --------> puntero a cadena de salida (presión)
  ************************************************************************/
-void StoreTripData (void)
+void StoreTripData (char *buffer)
 {
-    Nop();
+    file_append(buffer);
 }
 
 /*************************************************************************
@@ -252,6 +254,11 @@ int main(void)
     //Iniciar periféricos
     SYSTEM_Initialize();
 
+    SDcard_init();
+    mount_disk();
+    file_create("DATALOG.TXT");
+    sector_open();
+
     //Bucle principal
     while (1)
     {
@@ -268,13 +275,13 @@ int main(void)
                 RequestDataFromOBD(); //Obtenemos los datos de la ECU del vehiculo
                 ReadGpsGprmcCommand (gpsDate, gpsTime, gpsLatitude, northSouth, gpsLongitude, eastWest); //Obtenemos información GPS
                 
-                sprintf (messageToSend, "%s;%s;%s;%s;%s;%s;%s;%s;%s;%s;%s;%s;%s;%s;\r\n", 
+                sprintf (messageToSend, "%s;%s;%s;%s;%s;%s;%s;%s;%s;%s;%s;%s;%s;%s;%s;\r\n", 
                                                 HEADER_MSG,OBD_Value.vinOBD,gpsDate, gpsTime,gpsLatitude, northSouth, gpsLongitude, eastWest,
                                                 OBD_Value.speedOBD, OBD_Value.rpmOBD, OBD_Value.tempOBD, OBD_Value.pressureOBD, 
                                                 OBD_Value.throttleOBD, OBD_Value.milLamp, OBD_Value.numDTCs);
                 
                 SendTripData(messageToSend); //Enviamos la información
-                //StoreTripData(); //Almacenamos la información en la microSD 
+                StoreTripData(messageToSend); //Almacenamos la información en la microSD 
             }
         }
         else
