@@ -25,10 +25,14 @@ extern "C" {
 #define AT_COMMAND_CONNECT_WITH_OUR_SERVER          "AT+CGDCONT=1,?IP?,?servidor.com?\r\n"
 #define AT_COMMAND_CHECK_SERVER_CONNECTION          "AT+CGDCONT?\r\n"
 #define AT_COMMAND_OPEN_SESSION                     "AT+CGACT=1,1\r\n"
-#define AT_COMMAND_CLOSE_SESSION                    "AT+CGDCONT?\r\n"
+#define AT_COMMAND_CLOSE_SESSION                    "AT+CGACT=0,1\r\n"
 #define AT_COMMAND_CLOSE_GPRS_CONNECTION            "AT+CGATT=0\r\n"
+#define SIGNAL_QUALITY_RESPONSE                     "+CSQ: "
+#define OPERATOR_NAME                               "vodafone"
+#define SERVER_NAME                                 "servidor.com"
     
 #define AT_OK_RESPONSE                              "OK"
+#define GENERAL_ERROR                               -1000
 
 #define ERROR_CODE_CHECK_PIN                        2
 #define ERROR_CODE_CHECK_NETWORK                    3
@@ -45,7 +49,7 @@ void ConfigGprsPort (void);
 unsigned char CheckSIM (void);
 unsigned char CheckNetwork (void);
 unsigned char RetrieveNetworkOperator (void);
-unsigned char CheckSignalQuality (void);
+int CheckSignalQuality (void);
 unsigned char EstablishGprsConnection (void);
 unsigned char CheckServerConnection (void);
 unsigned char ConnectWithOurServer (void);
