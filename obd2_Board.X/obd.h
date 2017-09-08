@@ -58,6 +58,8 @@ void ReadVINFromOBD (char *vinOBD);
 void ReadPressureFromOBD (char *pressureOBD);
 void CleanDtcsFromOBD (void);
 
+void RequestDataFromOBD (void);
+
     // TODO If C++ is being used, regular C code needs function names to have C 
     // linkage so the functions can be used by the c code. 
 
