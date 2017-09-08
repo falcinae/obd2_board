@@ -14,6 +14,7 @@ Lista de modificaciones:
 
 
 #include "mcc_generated_files/mcc.h"
+#include "mcc_generated_files/uart4.h" 
 #include "FatFS/diskio.h"
 #include "FatFS/ff.h"
 #include "obd.h"
@@ -35,6 +36,7 @@ Lista de modificaciones:
 #define ONTRIP_CAR_MINIMUM_VBAT_VALUE   13.8
 #define ONTRIP_CAR_MAXIMUM_VBAT_VALUE   14.4
 
+#define HEADER_MSG                      "#MSG"
 
 unsigned char Timer1_1s_Tick = 0;
 
@@ -200,7 +202,11 @@ void StoreTripData (void)
  ************************************************************************/
 void SendTripData (char *dataToSend)
 {
+    //Enviamos por GPRS
     SendDataToGprs(dataToSend);
+    
+    //Y tambien por USB
+    UART4_WriteBuffer(dataToSend, strlen(dataToSend));
 }
     
 /*************************************************************************
@@ -245,7 +251,7 @@ int main(void)
     
     //Iniciar periféricos
     SYSTEM_Initialize();
- 
+
     //Bucle principal
     while (1)
     {
@@ -261,7 +267,12 @@ int main(void)
                 Timer1_1s_Tick = 0;
                 RequestDataFromOBD(); //Obtenemos los datos de la ECU del vehiculo
                 ReadGpsGprmcCommand (gpsDate, gpsTime, gpsLatitude, northSouth, gpsLongitude, eastWest); //Obtenemos información GPS
-                sprintf (messageToSend, "%s", "HOLA);");
+                
+                sprintf (messageToSend, "%s;%s;%s;%s;%s;%s;%s;%s;%s;%s;%s;%s;%s;%s;\r\n", 
+                                                HEADER_MSG,OBD_Value.vinOBD,gpsDate, gpsTime,gpsLatitude, northSouth, gpsLongitude, eastWest,
+                                                OBD_Value.speedOBD, OBD_Value.rpmOBD, OBD_Value.tempOBD, OBD_Value.pressureOBD, 
+                                                OBD_Value.throttleOBD, OBD_Value.milLamp, OBD_Value.numDTCs);
+                
                 SendTripData(messageToSend); //Enviamos la información
                 //StoreTripData(); //Almacenamos la información en la microSD 
             }
