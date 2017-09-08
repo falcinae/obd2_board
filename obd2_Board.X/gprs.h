@@ -56,6 +56,9 @@ unsigned char GprsReconnectSequence (void);
 
 unsigned char GprsStartSequence (void);
 unsigned char GprsCloseSequence (void);
+void SendDataToGprs (char *gprsData);
+void Gprs_SendMessageReadResponse (char *bufferIn, char *bufferOut);
+
 
 #ifdef	__cplusplus
 }

@@ -9,6 +9,18 @@ void ConfigObdPort (void)
     UART1_Initialize();
 }
 
+void Obd_SendMessageReadResponse (char *bufferIn, char *bufferOut)
+{
+    char *bufferTemp;
+    
+    UART1_WriteBuffer(bufferIn, strlen(bufferIn));
+    UART1_ReadBuffer(bufferTemp, 50);
+    
+    strcpy(bufferOut, bufferTemp);
+    
+    return;
+}
+
 void RequestDataFromOBD (void)
 {
     ReadSpeedFromOBD (OBD_Value.speedOBD);
@@ -24,12 +36,14 @@ void RequestDataFromOBD (void)
  
 unsigned char ConnectWithObdInterpreter (void)
 {
-    char bufferToSend[10];
-    char bufferRead[10];
+    char bufferToSend[50] = {};
+    char bufferRead[50] = {};
+    
+    memset(bufferToSend, 0, 50);
+    memset(bufferRead, 0, 50);
     
     sprintf(bufferToSend, "%s\r\n", CONNECT_WITH_OBD_INTERPRETER);
-    UART1_WriteBuffer(bufferToSend, strlen(bufferToSend));
-    UART1_ReadBuffer(bufferRead, 5);
+    Obd_SendMessageReadResponse(bufferToSend, bufferRead);
     
     if (strstr(bufferRead, AT_OK_RESPONSE) != NULL)
     {
@@ -41,12 +55,14 @@ unsigned char ConnectWithObdInterpreter (void)
 
 void ReadSpeedFromOBD (char *speedOBD)
 {
-    char bufferToSend[10];
-    char bufferRead[10];
+    char bufferToSend[50] = {};
+    char bufferRead[50] = {};
     
+    memset(bufferToSend, 0, 50);
+    memset(bufferRead, 0, 50);
+   
     sprintf(bufferToSend, "%s\r\n", OBD_SPEED_PID);
-    UART1_WriteBuffer(bufferToSend, strlen(bufferToSend));
-    UART1_ReadBuffer(bufferRead, 5);
+    Obd_SendMessageReadResponse(bufferToSend, bufferRead);
     
     memcpy(speedOBD, &bufferRead[2], 1);
 }
@@ -57,46 +73,51 @@ void ReadRpmFromOBD (char *rpmOBD)
     char bufferRead[10];
     
     sprintf(bufferToSend, "%s\r\n", OBD_RPM_PID);
-    UART1_WriteBuffer(bufferToSend, strlen(bufferToSend));
-    UART1_ReadBuffer(bufferRead, 6);
+    Obd_SendMessageReadResponse(bufferToSend, bufferRead);
     
     memcpy(rpmOBD, &bufferRead[2], 2);
 }
 
 void ReadTemperatureFromOBD (char *tempOBD)
 {
-    char bufferToSend[10];
-    char bufferRead[10];
+    char bufferToSend[50] = {};
+    char bufferRead[50] = {};
+    
+    memset(bufferToSend, 0, 50);
+    memset(bufferRead, 0, 50);
     
     sprintf(bufferToSend, "%s\r\n", OBD_TEMP_PID);
-    UART1_WriteBuffer(bufferToSend, strlen(bufferToSend));
-    UART1_ReadBuffer(bufferRead, 5);
+    Obd_SendMessageReadResponse(bufferToSend, bufferRead);
     
     memcpy(tempOBD, &bufferRead[2], 1);
 }
 
 void ReadThrottleFromOBD (char *throttleOBD)
 {
-    char bufferToSend[10];
-    char bufferRead[10];
+    char bufferToSend[50] = {};
+    char bufferRead[50] = {};
+    
+    memset(bufferToSend, 0, 50);
+    memset(bufferRead, 0, 50);
     
     sprintf(bufferToSend, "%s\r\n", OBD_THROTTLE_PID);
-    UART1_WriteBuffer(bufferToSend, strlen(bufferToSend));
-    UART1_ReadBuffer(bufferRead, 5);
+    Obd_SendMessageReadResponse(bufferToSend, bufferRead);
     
     memcpy(throttleOBD, &bufferRead[2], 1);
 }
 
 void ReadDTCsFromOBD (char *milLamp, char *numDTCs)
 {
-    char bufferToSend[10];
-    char bufferRead[10];
+    char bufferToSend[50] = {};
+    char bufferRead[50] = {};
     char numDTCsBuffer[3];
     int dtcs;
     
+    memset(bufferToSend, 0, 50);
+    memset(bufferRead, 0, 50);
+    
     sprintf(bufferToSend, "%s\r\n", OBD_nDTCs_PID);
-    UART1_WriteBuffer(bufferToSend, strlen(bufferToSend));
-    UART1_ReadBuffer(bufferRead, 8);
+    Obd_SendMessageReadResponse(bufferToSend, bufferRead);
     
     dtcs = atoi(bufferRead[2]);
     
@@ -125,24 +146,28 @@ void CleanDtcsFromOBD (void)
 
 void ReadVINFromOBD (char *vinOBD)
 {
-    char bufferToSend[10];
-    char bufferRead[30];
+    char bufferToSend[50] = {};
+    char bufferRead[50] = {};
+    
+    memset(bufferToSend, 0, 50);
+    memset(bufferRead, 0, 50);
     
     sprintf(bufferToSend, "%s\r\n", OBD_VIN_PID);
-    UART1_WriteBuffer(bufferToSend, strlen(bufferToSend));
-    UART1_ReadBuffer(bufferRead, 22);
+    Obd_SendMessageReadResponse(bufferToSend, bufferRead);
     
     memcpy(vinOBD, &bufferRead[2], 18);
 }
 
 void ReadPressureFromOBD (char *pressureOBD)
 {
-    char bufferToSend[10];
-    char bufferRead[10];
+    char bufferToSend[50] = {};
+    char bufferRead[50] = {};
+    
+    memset(bufferToSend, 0, 50);
+    memset(bufferRead, 0, 50);
     
     sprintf(bufferToSend, "%s\r\n", OBD_PRESSURE_PID);
-    UART1_WriteBuffer(bufferToSend, strlen(bufferToSend));
-    UART1_ReadBuffer(bufferRead, 6);
+    Obd_SendMessageReadResponse(bufferToSend, bufferRead);
     
     memcpy(pressureOBD, &bufferRead[2], 2);
 }

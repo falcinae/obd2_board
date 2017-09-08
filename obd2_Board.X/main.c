@@ -49,6 +49,8 @@
 #include "gps.h"
 #include "gprs.h"
 #include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
 
 #define _1S_TIMER1_TICK                 1
 
@@ -67,9 +69,15 @@ unsigned char Timer1_1s_Tick = 0;
 
 OBD_Data OBD_Value;
 
-void MeasureIgnitionLevel (float *ignValue);
-unsigned char IsOnTrip (void);
+void GoToSleep (void);
+
 unsigned char ReStartSystem (void);
+unsigned char IsOnTrip (void);
+void MeasureIgnitionLevel (float *ignValue);
+
+void StoreTripData (void);
+void SendTripData (char *dataToSend);
+void RequestConfigurationFromHost (void);
 
 //FIL fil;       /* File object */
 //char line[82]; /* Line buffer */
@@ -118,26 +126,9 @@ unsigned char IsOnTrip (void)
     MeasureIgnitionLevel (&ignValue);
     
     if (ignValue > ONTRIP_CAR_MINIMUM_VBAT_VALUE) 
-        return 1;
-    else
         return 0;
-}
-
-void RequestDataFromGPS (void)
-{
-
-    return;
-}
-void ReadPositionData (void)
-{
-    return;
-}
-
-void ReadTripData(void)
-{
-    RequestDataFromOBD();
-
-    return;    
+    else
+        return 1;
 }
 
 void MeasureIgnitionLevel (float *ignValue)
@@ -155,22 +146,66 @@ void MeasureIgnitionLevel (float *ignValue)
     *ignValue = (float) (VREF/STEPS_ADC_RESOLUTION) * adcValue;
 }
 
+void StoreTripData (void)
+{
+    Nop();
+}
+
+void SendTripData (char *dataToSend)
+{
+    SendDataToGprs(dataToSend);
+}
+    
+void RequestConfigurationFromHost (void)
+{
+    Nop();
+}
+
 int main(void)
 {
-    unsigned char resetTrip = 0;
+    //Iniciar variables de datos
+    char gpsDate[50] = {};
+    char gpsTime[50] = {};
+    char northSouth[50] = {};
+    char gpsLongitude[50] = {};
+    char gpsLatitude[50] = {};
+    char eastWest[50] = {};
+    char messageToSend[50] = {};
     
-    char *gpsDate;
-    char *gpsTime;
-    char *northSouth;
-    char *gpsLongitude;
-    char *gpsLatitude;
-    char *eastWest;
-    
-    
-    // initialize the device
+    //Iniciar periféricos
     SYSTEM_Initialize();
+ 
+    //Bucle principal
+    while (1)
+    {
+        //Comprobar si hay alguna configuración o lectura a la espera
+        RequestConfigurationFromHost();
+        
+        //Comprobamos si estamos en viaje
+        if (!IsOnTrip())
+        {
+            //Si ha pasado 1 seg..
+            if (Timer1_1s_Tick)
+            {
+                Timer1_1s_Tick = 0;
+                RequestDataFromOBD(); //Obtenemos los datos de la ECU del vehiculo
+                ReadGpsGprmcCommand (gpsDate, gpsTime, gpsLatitude, northSouth, gpsLongitude, eastWest); //Obtenemos información GPS
+                sprintf (messageToSend, "%s", "HOLA);");
+                SendTripData(messageToSend); //Enviamos la información
+                //StoreTripData(); //Almacenamos la información en la microSD 
+            }
+        }
+        else
+        {
+            //Poner el dispositivo en modo de ultra bajo consumo
+            GoToSleep();
+        }
+    }
 
-    /* 
+    return 1;
+}
+
+   /* 
     Register work area to the default drive
     f_mount(&FatFs, "", 0);
       
@@ -181,37 +216,3 @@ int main(void)
     fr = f_write(&fil, line, 16, &br);           
     f_close(&fil);
     */
-
-    while (1)
-    {
-        if (IsOnTrip())
-        {
-            if (Timer1_1s_Tick)
-            {
-                Timer1_1s_Tick = 0;
-                
-                if (!resetTrip)
-                {
-                    ReStartSystem();
-                    resetTrip = 1;
-                }
-
-                ReadTripData();
-                ReadGpsGprmcCommand (gpsDate, gpsTime, gpsLatitude, northSouth, gpsLongitude, eastWest);
-                //SendTripData();
-                //StoreTripData();
-            }
-        }
-        else
-        {
-            resetTrip = 0;
-            GoToSleep();
-        }
-        
-    }
-
-    return -1;
-}
-/**
- End of File
-*/
