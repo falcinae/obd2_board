@@ -9,6 +9,7 @@ void ConfigGprsPort (void)
     UART3_Initialize();
 }
 
+
 void Gprs_SendMessageReadResponse (char *bufferIn, char *bufferOut)
 {
     char *bufferTemp;
