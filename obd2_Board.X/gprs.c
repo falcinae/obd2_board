@@ -35,6 +35,19 @@ void ConfigGprsPort (void)
 }
 
 
+/*************************************************************************
+    Nombre de la función: 	Gprs_SendMessageReadResponse()
+    Responsable: 			Javier Alcina
+    Descripción:
+        Función para enviar mensajes y obtener respuesta del modem GPRS
+    Precondiciones:
+        Haber iniciado la uart de comunicaciones
+    Returns
+        Ninguno
+    Parametros
+        char *bufferIn --------> puntero a cadena de entrada
+        char *bufferOut --------> puntero a cadena de salida
+ ************************************************************************/
 void Gprs_SendMessageReadResponse (char *bufferIn, char *bufferOut)
 {
     char *bufferTemp;
