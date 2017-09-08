@@ -1,16 +1,21 @@
-/* 
- * File:  gps.h 
- * Author: Javier Alcina
- * Comments: Header file for GPS library
- * Revision history: 
- */
+/*************************************************************************
+Nombre del fichero: 	gps.h
+Tipo de fichero: 		Header File
+Fecha de creacion: 		17-Abril-2017
+Ultima modificacion: 	17-Abril-2017
+Compañia:				Universidad de Cádiz
+Responsable: 			Javier Alcina
+ 
+Proposito:
+En este fichero se encuentran las definiciones de la libreria GPS
+Lista de modificaciones:
+************************************************************************/
 
-// This is a guard condition so that contents of this file are not included
-// more than once.  
+ 
 #ifndef GPS_H
 #define	GPS_H
 
-#include <xc.h> // include processor files - each processor file is guarded.  
+#include <xc.h> 
 #include "mcc_generated_files/uart2.h" 
 
 #ifdef	__cplusplus

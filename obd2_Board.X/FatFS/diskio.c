@@ -483,26 +483,3 @@ DRESULT disk_ioctl (
 }
 #endif
 
-/*---------------------------------------------------------*/
-/* User Provided RTC Function for FatFs module             */
-/*---------------------------------------------------------*/
-/* This is a real time clock service to be called from     */
-/* FatFs module. Any valid time must be returned even if   */
-/* the system does not support an RTC.                     */
-/* This function is not required in read-only cfg.         */
-
-/*
-unsigned long get_fattime (void)
-{
-	unsigned long tmr;
-
-	tmr =	  (((unsigned long)rtcYear - 1980) << 25)
-			| ((unsigned long)rtcMon << 21)
-			| ((unsigned long)rtcMday << 16)
-			| (unsigned long)(rtcHour << 11)
-			| (unsigned long)(rtcMin << 5)
-			| (unsigned long)(rtcSec >> 1);	
-
-	return tmr;
-}
-*/

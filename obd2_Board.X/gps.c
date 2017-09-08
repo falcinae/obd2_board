@@ -1,14 +1,58 @@
+/*************************************************************************
+Nombre del fichero: 	gps.c
+Tipo de fichero: 		Source File
+Fecha de creacion: 		17-Abril-2017
+Ultima modificacion: 	17-Abril-2017
+Compañia:				Universidad de Cádiz
+Responsable: 			Javier Alcina
+ 
+Proposito:
+En este fichero se definirán todas las funciones referentes a las 
+comunicaciones GPS.
+Lista de modificaciones:
+************************************************************************/
 
 #include "gps.h" 
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
 
+/*************************************************************************
+    Nombre de la función: 	ConfigGpsPort()
+    Responsable: 			Javier Alcina
+    Descripción:
+        Configurar el puerto de comunicaciones con el modulo GPS
+    Precondiciones:
+        Ninguna
+    Returns
+        Ninguno
+    Parametros
+        Ninguno
+************************************************************************/
 void ConfigGpsPort (void)
 {
     UART2_Initialize();
 }
 
+
+
+/*************************************************************************
+    Nombre de la función: 	ReadGpsGprmcCommand()
+    Responsable: 			Javier Alcina
+    Descripción:
+        Función para obtener los datos de GPS y devolverlos
+    Precondiciones:
+        Haber iniciado la uart de comunicaciones
+    Returns
+        Ninguno
+    Parametros
+        char *gpsDate --------> puntero a cadena gpsDate (Fecha)
+        char *gpsTime --------> puntero a cadena gpsTime (Hora)
+        char *gpsLatitude ----> puntero a cadena gpsLatitude (Latitud)
+        char *northSouth -----> puntero a cadena northSouth (Norte/Sur)
+        char *gpsLongitude ---> puntero a cadena gpsLongitude (Longitud)
+        char *eastWest -------> puntero a cadena eastWest (Este/Oeste)
+ ************************************************************************/
 void ReadGpsGprmcCommand (char *gpsDate, char *gpsTime,
                             char *gpsLatitude, char *northSouth,
                             char *gpsLongitude, char *eastWest)

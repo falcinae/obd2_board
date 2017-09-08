@@ -1,46 +1,17 @@
-/**
-  Generated Main Source File
+/*************************************************************************
+Nombre del fichero: 	gprs.c
+Tipo de fichero: 		Source File
+Fecha de creacion: 		17-Abril-2017
+Ultima modificacion: 	17-Abril-2017
+Compañia:				Universidad de Cádiz
+Responsable: 			Javier Alcina
+ 
+Proposito:
+En este fichero se encuentra la aplicación principal del programa.
 
-  Company:
-    Microchip Technology Inc.
+Lista de modificaciones:
+************************************************************************/
 
-  File Name:
-    main.c
-
-  Summary:
-    This is the main file generated using PIC24 / dsPIC33 / PIC32MM MCUs
-
-  Description:
-    This header file provides implementations for driver APIs for all modules selected in the GUI.
-    Generation Information :
-        Product Revision  :  PIC24 / dsPIC33 / PIC32MM MCUs - pic24-dspic-pic32mm : v1.35
-        Device            :  PIC24FJ128GA306
-    The generated drivers are tested against the following:
-        Compiler          :  XC16 1.31
-        MPLAB             :  MPLAB X 3.60
-*/
-
-/*
-    (c) 2016 Microchip Technology Inc. and its subsidiaries. You may use this
-    software and any derivatives exclusively with Microchip products.
-
-    THIS SOFTWARE IS SUPPLIED BY MICROCHIP "AS IS". NO WARRANTIES, WHETHER
-    EXPRESS, IMPLIED OR STATUTORY, APPLY TO THIS SOFTWARE, INCLUDING ANY IMPLIED
-    WARRANTIES OF NON-INFRINGEMENT, MERCHANTABILITY, AND FITNESS FOR A
-    PARTICULAR PURPOSE, OR ITS INTERACTION WITH MICROCHIP PRODUCTS, COMBINATION
-    WITH ANY OTHER PRODUCTS, OR USE IN ANY APPLICATION.
-
-    IN NO EVENT WILL MICROCHIP BE LIABLE FOR ANY INDIRECT, SPECIAL, PUNITIVE,
-    INCIDENTAL OR CONSEQUENTIAL LOSS, DAMAGE, COST OR EXPENSE OF ANY KIND
-    WHATSOEVER RELATED TO THE SOFTWARE, HOWEVER CAUSED, EVEN IF MICROCHIP HAS
-    BEEN ADVISED OF THE POSSIBILITY OR THE DAMAGES ARE FORESEEABLE. TO THE
-    FULLEST EXTENT ALLOWED BY LAW, MICROCHIP'S TOTAL LIABILITY ON ALL CLAIMS IN
-    ANY WAY RELATED TO THIS SOFTWARE WILL NOT EXCEED THE AMOUNT OF FEES, IF ANY,
-    THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE.
-
-    MICROCHIP PROVIDES THIS SOFTWARE CONDITIONALLY UPON YOUR ACCEPTANCE OF THESE
-    TERMS.
-*/
 
 #include "mcc_generated_files/mcc.h"
 #include "FatFS/diskio.h"
@@ -89,6 +60,19 @@ void RequestConfigurationFromHost (void);
                          Main application
  */
 
+/*************************************************************************
+    Nombre de la función: 	GoToSleep()
+    Responsable: 			Javier Alcina
+    Descripción:
+        Función para introducir el microcontrolador en el modo
+        de más bajo consumno bajo consumo.
+    Precondiciones:
+        Ninguna
+    Returns
+        Ninguno
+    Parametros
+        Ninguno
+ ************************************************************************/
 void GoToSleep (void)
 {
     //Deactivate 3V3 Peripheral Power and 3V8 Modem Power
@@ -104,6 +88,20 @@ void GoToSleep (void)
     return;
 }
 
+/*************************************************************************
+    Nombre de la función: 	ReStartSystem()
+    Responsable: 			Javier Alcina
+    Descripción:
+        Función que reestablece los perifericos y las alimentaciones
+        tras un Sleep.
+    Precondiciones:
+        Ninguna
+    Returns
+        0 -> Si no hubo error en la conexión al chip OBD
+        1 -> Si hubo error en la conexión al chip OBD
+    Parametros
+        Ninguno
+ ************************************************************************/
 unsigned char ReStartSystem (void)
 {
     //Re-Activate 3V3 Peripheral Power and 3V8 Modem Power
@@ -119,6 +117,19 @@ unsigned char ReStartSystem (void)
         return 1;
 }
 
+/*************************************************************************
+    Nombre de la función: 	IsOnTrip()
+    Responsable: 			Javier Alcina
+    Descripción:
+        Función para conocer si el vehiculo está o no en viaje (VBat>13.8V)
+    Precondiciones:
+        Ninguna
+    Returns
+        0 -> Si el coche está en viaje (VBAT > 13.8)
+        1 -> Si el coche no está en viaje (VBAT < 13.8)
+    Parametros
+        Ninguno
+ ************************************************************************/
 unsigned char IsOnTrip (void)
 {
     float ignValue = 0;
@@ -131,6 +142,18 @@ unsigned char IsOnTrip (void)
         return 1;
 }
 
+/*************************************************************************
+    Nombre de la función: 	ReadPressureFromOBD()
+    Responsable: 			Javier Alcina
+    Descripción:
+        Función para medir la tensión de batería del vehículo
+    Precondiciones:
+        Ninguna
+    Returns
+        Ninguno
+    Parametros
+        float *ignValue --------> puntero a valor de V de batería medida
+ ************************************************************************/
 void MeasureIgnitionLevel (float *ignValue)
 {
     unsigned int adcValue = 0;
@@ -146,21 +169,69 @@ void MeasureIgnitionLevel (float *ignValue)
     *ignValue = (float) (VREF/STEPS_ADC_RESOLUTION) * adcValue;
 }
 
+/*************************************************************************
+    Nombre de la función: 	ReadPressureFromOBD()
+    Responsable: 			Javier Alcina
+    Descripción:
+        Función para solicitar la presión atmosférica al chip OBD
+    Precondiciones:
+        Ninguna
+    Returns
+        Ninguno
+    Parametros
+        char *pressureOBD --------> puntero a cadena de salida (presión)
+ ************************************************************************/
 void StoreTripData (void)
 {
     Nop();
 }
 
+/*************************************************************************
+    Nombre de la función: 	ReadPressureFromOBD()
+    Responsable: 			Javier Alcina
+    Descripción:
+        Función para solicitar la presión atmosférica al chip OBD
+    Precondiciones:
+        Ninguna
+    Returns
+        Ninguno
+    Parametros
+        char *pressureOBD --------> puntero a cadena de salida (presión)
+ ************************************************************************/
 void SendTripData (char *dataToSend)
 {
     SendDataToGprs(dataToSend);
 }
     
+/*************************************************************************
+    Nombre de la función: 	ReadPressureFromOBD()
+    Responsable: 			Javier Alcina
+    Descripción:
+        Función para solicitar la presión atmosférica al chip OBD
+    Precondiciones:
+        Ninguna
+    Returns
+        Ninguno
+    Parametros
+        char *pressureOBD --------> puntero a cadena de salida (presión)
+ ************************************************************************/
 void RequestConfigurationFromHost (void)
 {
     Nop();
 }
 
+/*************************************************************************
+    Nombre de la función: 	main()
+    Responsable: 			Javier Alcina
+    Descripción:
+        Aplicación principal
+     Precondiciones:
+        Ninguna
+    Returns
+        Ninguno
+    Parametros
+        Ninguno
+ ************************************************************************/
 int main(void)
 {
     //Iniciar variables de datos

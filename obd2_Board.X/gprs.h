@@ -1,16 +1,20 @@
-/* 
- * File:  gprs.h 
- * Author: Javier Alcina
- * Comments: Header file for GPRS library
- * Revision history: 
- */
+/*************************************************************************
+Nombre del fichero: 	gprs.h
+Tipo de fichero: 		Header File
+Fecha de creacion: 		17-Abril-2017
+Ultima modificacion: 	17-Abril-2017
+Compañia:				Universidad de Cádiz
+Responsable: 			Javier Alcina
+ 
+Proposito:
+En este fichero se encuentran las definiciones de la libreria GPRS
+Lista de modificaciones:
+************************************************************************/
 
-// This is a guard condition so that contents of this file are not included
-// more than once.  
 #ifndef GPRS_H
 #define	GPRS_H
 
-#include <xc.h> // include processor files - each processor file is guarded.  
+#include <xc.h> 
 #include "mcc_generated_files/uart3.h" 
 
 #ifdef	__cplusplus

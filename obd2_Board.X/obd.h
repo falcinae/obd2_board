@@ -1,12 +1,16 @@
-/* 
- * File:  obd.h 
- * Author: Javier Alcina
- * Comments: Header file for OBD library
- * Revision history: 
- */
+/*************************************************************************
+Nombre del fichero: 	obd.h
+Tipo de fichero: 		Header File
+Fecha de creacion: 		17-Abril-2017
+Ultima modificacion: 	17-Abril-2017
+Compañia:				Universidad de Cádiz
+Responsable: 			Javier Alcina
+ 
+Proposito:
+En este fichero se encuentran las definiciones de la libreria OBD
+Lista de modificaciones:
+************************************************************************/
 
-// This is a guard condition so that contents of this file are not included
-// more than once.  
 #ifndef OBD_H
 #define	OBD_H
 
@@ -29,9 +33,7 @@ extern "C" {
 #define OBD_THROTTLE_PID        "0111"
 #define OBD_CLEAN_DTCS_PID      "05"
 
-#define AT_OK_RESPONSE                              "OK"
-
-   
+#define AT_OK_RESPONSE          "OK"   
     
 typedef struct OBDData {
     char *speedOBD;
@@ -58,8 +60,7 @@ void ReadVINFromOBD (char *vinOBD);
 void ReadPressureFromOBD (char *pressureOBD);
 void CleanDtcsFromOBD (void);
 
-    // TODO If C++ is being used, regular C code needs function names to have C 
-    // linkage so the functions can be used by the c code. 
+void RequestDataFromOBD (void);
 
 #ifdef	__cplusplus
 }
