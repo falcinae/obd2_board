@@ -4,7 +4,7 @@ Tipo de fichero: 		Source File
 Fecha de creacion: 		17-Abril-2017
 Ultima modificacion: 	17-Abril-2017
 Compañia:				Universidad de Cádiz
-Responsable: 			Javier Alcina
+Responsable: Javier Alcina
  
 Proposito:
 En este fichero se definirán todas las funciones referentes a las 
@@ -19,7 +19,7 @@ Lista de modificaciones:
 
 /*************************************************************************
     Nombre de la función: 	ConfigGpsPort()
-    Responsable: 			Javier Alcina
+    Responsable: Javier Alcina
     Descripción:
         Configurar el puerto de comunicaciones con el modulo GPS
     Precondiciones:
@@ -38,7 +38,7 @@ void ConfigGpsPort (void)
 
 /*************************************************************************
     Nombre de la función: 	ReadGpsGprmcCommand()
-    Responsable: 			Javier Alcina
+    Responsable: Javier Alcina
     Descripción:
         Función para obtener los datos de GPS y devolverlos
     Precondiciones:

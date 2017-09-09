@@ -4,7 +4,7 @@ Tipo de fichero: 		Header File
 Fecha de creacion: 		17-Abril-2017
 Ultima modificacion: 	17-Abril-2017
 Compañia:				Universidad de Cádiz
-Responsable: 			Javier Alcina
+Responsable: Javier Alcina
  
 Proposito:
 En este fichero se encuentran las definiciones de la libreria GPRS

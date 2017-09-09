@@ -1,12 +1,21 @@
+/*************************************************************************
+Nombre del fichero: 	sdcard.c
+Tipo de fichero: 		Source File
+Fecha de creacion: 		17-Abril-2017
+Ultima modificacion: 	17-Abril-2017
+Compañia:				Universidad de Cádiz
+Responsable: Javier Alcina
+ 
+Proposito:
+En este fichero se encuentra la librería para el control de la tarjeta SD.
+
+Lista de modificaciones:
+************************************************************************/
 
 #include <xc.h>
 #include "sdcard.h"
 #include "mcc_generated_files/spi2.h" 
 
-// 512 byte read buffer
-//unsigned char SDRdata[512];
-// 512 byte write buffer
-//unsigned char SDWdata[512];
 // 512 byte block buffer
 unsigned char SDdata[512];
 // SD command buffer
@@ -18,6 +27,18 @@ unsigned char card_response = 0;
 // timeout variable to determine card timeout
 unsigned int timeout = SD_TIMEOUT;
 
+/*************************************************************************
+    Nombre de la función: 	SDcard_init()
+    Responsable: Javier Alcina
+    Descripción:
+        Configurar el puerto de comunicaciones con el modem GPRS
+    Precondiciones:
+        Ninguna
+    Returns
+        Ninguno
+    Parametros
+        Ninguno
+************************************************************************/
 void SDcard_init(void)
 {
     char *dataReceived;
@@ -58,14 +79,16 @@ void SDcard_init(void)
     SDcommand[5] = 0x95; // CRC not needed, dummy byte
     // wait for SD card to go to idle mode
     no_response = 1;
-    while(no_response){
+    while(no_response)
+    {
             // send command 1
             SPI2_Exchange8bitBuffer(SDcommand, 6, dataReceived);
             // read back response
             // response time is 0 to 8 bytes
             SPI2_Exchange8bitBuffer(SDdata, 8, dataReceived);
-            for(b = 0; b < 7; b++){
-                    if(SDdata[b] == 0x00) no_response = 0;
+            for(b = 0; b < 7; b++)
+            {
+                if(SDdata[b] == 0x00) no_response = 0;
             }
     }
 
@@ -73,6 +96,18 @@ void SDcard_init(void)
     CS_high;
 }
 
+/*************************************************************************
+    Nombre de la función: 	SDcard_read_block()
+    Responsable: Javier Alcina
+    Descripción:
+        Configurar el puerto de comunicaciones con el modem GPRS
+    Precondiciones:
+        Ninguna
+    Returns
+        Ninguno
+    Parametros
+        Ninguno
+************************************************************************/
 void SDcard_read_block(unsigned long address)
 {
     char *dataReceived;
@@ -108,6 +143,18 @@ void SDcard_read_block(unsigned long address)
     CS_high;
 }
 
+/*************************************************************************
+    Nombre de la función: 	SDcard_write_block()
+    Responsable: Javier Alcina
+    Descripción:
+        Configurar el puerto de comunicaciones con el modem GPRS
+    Precondiciones:
+        Ninguna
+    Returns
+        Ninguno
+    Parametros
+        Ninguno
+************************************************************************/
 void SDcard_write_block(unsigned long address)
 {
     char *dataReceived;
@@ -149,6 +196,18 @@ void SDcard_write_block(unsigned long address)
     CS_high;
 }
 
+/*************************************************************************
+    Nombre de la función: 	SDcard_get_response()
+    Responsable: Javier Alcina
+    Descripción:
+        Configurar el puerto de comunicaciones con el modem GPRS
+    Precondiciones:
+        Ninguna
+    Returns
+        Ninguno
+    Parametros
+        Ninguno
+************************************************************************/
 unsigned char SDcard_get_response(unsigned char response)
 {
     char *dataReceived;
@@ -158,7 +217,8 @@ unsigned char SDcard_get_response(unsigned char response)
     no_response = 1;
     
     SPI2_Exchange8bitBuffer(SDcommand, 1, dataReceived);
-    while(no_response && timeout){
+    while(no_response && timeout)
+    {
         if(dataReceived == response) no_response = 0; // check if response matches
         timeout--;
     }

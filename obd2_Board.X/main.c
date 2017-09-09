@@ -4,7 +4,7 @@ Tipo de fichero: 		Source File
 Fecha de creacion: 		17-Abril-2017
 Ultima modificacion: 	17-Abril-2017
 Compañia:				Universidad de Cádiz
-Responsable: 			Javier Alcina
+Responsable: Javier Alcina
  
 Proposito:
 En este fichero se encuentra la aplicación principal del programa.
@@ -50,7 +50,7 @@ unsigned char ReStartSystem (void);
 unsigned char IsOnTrip (void);
 void MeasureIgnitionLevel (float *ignValue);
 
-void StoreTripData (char *buffer);
+void StoreTripData (char *fileName, char *buffer);
 void SendTripData (char *dataToSend);
 void RequestConfigurationFromHost (void);
 
@@ -66,7 +66,7 @@ void RequestConfigurationFromHost (void);
 
 /*************************************************************************
     Nombre de la función: 	GoToSleep()
-    Responsable: 			Javier Alcina
+    Responsable: Javier Alcina
     Descripción:
         Función para introducir el microcontrolador en el modo
         de más bajo consumno bajo consumo.
@@ -79,6 +79,9 @@ void RequestConfigurationFromHost (void);
  ************************************************************************/
 void GoToSleep (void)
 {
+    //Ponemos en marcha el Timer1
+    T1CONbits.TON = 0;
+
     //Deactivate 3V3 Peripheral Power and 3V8 Modem Power
     _3V3_PERIPH_CTRL_SetLow();
     _3V8_MODEM_CTRL_SetLow();
@@ -94,7 +97,7 @@ void GoToSleep (void)
 
 /*************************************************************************
     Nombre de la función: 	ReStartSystem()
-    Responsable: 			Javier Alcina
+    Responsable: Javier Alcina
     Descripción:
         Función que reestablece los perifericos y las alimentaciones
         tras un Sleep.
@@ -123,7 +126,7 @@ unsigned char ReStartSystem (void)
 
 /*************************************************************************
     Nombre de la función: 	IsOnTrip()
-    Responsable: 			Javier Alcina
+    Responsable: Javier Alcina
     Descripción:
         Función para conocer si el vehiculo está o no en viaje (VBat>13.8V)
     Precondiciones:
@@ -148,7 +151,7 @@ unsigned char IsOnTrip (void)
 
 /*************************************************************************
     Nombre de la función: 	ReadPressureFromOBD()
-    Responsable: 			Javier Alcina
+    Responsable: Javier Alcina
     Descripción:
         Función para medir la tensión de batería del vehículo
     Precondiciones:
@@ -175,7 +178,7 @@ void MeasureIgnitionLevel (float *ignValue)
 
 /*************************************************************************
     Nombre de la función: 	ReadPressureFromOBD()
-    Responsable: 			Javier Alcina
+    Responsable: Javier Alcina
     Descripción:
         Función para solicitar la presión atmosférica al chip OBD
     Precondiciones:
@@ -185,14 +188,17 @@ void MeasureIgnitionLevel (float *ignValue)
     Parametros
         char *pressureOBD --------> puntero a cadena de salida (presión)
  ************************************************************************/
-void StoreTripData (char *buffer)
+void StoreTripData (char *fileName, char *buffer)
 {
+    file_create(fileName);
+    sector_open();
+
     file_append(buffer);
 }
 
 /*************************************************************************
     Nombre de la función: 	ReadPressureFromOBD()
-    Responsable: 			Javier Alcina
+    Responsable: Javier Alcina
     Descripción:
         Función para solicitar la presión atmosférica al chip OBD
     Precondiciones:
@@ -213,7 +219,7 @@ void SendTripData (char *dataToSend)
     
 /*************************************************************************
     Nombre de la función: 	ReadPressureFromOBD()
-    Responsable: 			Javier Alcina
+    Responsable: Javier Alcina
     Descripción:
         Función para solicitar la presión atmosférica al chip OBD
     Precondiciones:
@@ -230,7 +236,7 @@ void RequestConfigurationFromHost (void)
 
 /*************************************************************************
     Nombre de la función: 	main()
-    Responsable: 			Javier Alcina
+    Responsable: Javier Alcina
     Descripción:
         Aplicación principal
      Precondiciones:
@@ -250,14 +256,15 @@ int main(void)
     char gpsLatitude[50] = {};
     char eastWest[50] = {};
     char messageToSend[50] = {};
+    char fileName[50] = {};
     
     //Iniciar periféricos
     SYSTEM_Initialize();
 
+    T1CONbits.TON = 0;
+    
     SDcard_init();
     mount_disk();
-    file_create("DATALOG.TXT");
-    sector_open();
 
     //Bucle principal
     while (1)
@@ -268,6 +275,9 @@ int main(void)
         //Comprobamos si estamos en viaje
         if (!IsOnTrip())
         {
+            //Ponemos en marcha el Timer1
+            T1CONbits.TON = 0;
+            
             //Si ha pasado 1 seg..
             if (Timer1_1s_Tick)
             {
@@ -280,8 +290,9 @@ int main(void)
                                                 OBD_Value.speedOBD, OBD_Value.rpmOBD, OBD_Value.tempOBD, OBD_Value.pressureOBD, 
                                                 OBD_Value.throttleOBD, OBD_Value.milLamp, OBD_Value.numDTCs);
                 
+                sprintf (fileName, "DATALOG_%s_%s.txt", gpsDate, gpsTime);
                 SendTripData(messageToSend); //Enviamos la información
-                StoreTripData(messageToSend); //Almacenamos la información en la microSD 
+                StoreTripData(fileName, messageToSend); //Almacenamos la información en la microSD 
             }
         }
         else
@@ -293,15 +304,3 @@ int main(void)
 
     return 1;
 }
-
-   /* 
-    Register work area to the default drive
-    f_mount(&FatFs, "", 0);
-      
-    fr = f_open(&fil, "prueba.txt", FA_WRITE | FA_CREATE_NEW | FA_OPEN_APPEND);   
-    sprintf(line,"Hola mundo\r\n");   
-    fr = f_write(&fil, line, 12, &br);   
-    sprintf(line,"Hola mundo\r\n");
-    fr = f_write(&fil, line, 16, &br);           
-    f_close(&fil);
-    */

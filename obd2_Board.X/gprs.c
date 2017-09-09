@@ -4,7 +4,7 @@ Tipo de fichero: 		Source File
 Fecha de creacion: 		17-Abril-2017
 Ultima modificacion: 	17-Abril-2017
 Compañia:				Universidad de Cádiz
-Responsable: 			Javier Alcina
+Responsable: Javier Alcina
  
 Proposito:
 En este fichero se definirán todas las funciones referentes a las 
@@ -19,7 +19,7 @@ Lista de modificaciones:
 
 /*************************************************************************
     Nombre de la función: 	ConfigGprsPort()
-    Responsable: 			Javier Alcina
+    Responsable: Javier Alcina
     Descripción:
         Configurar el puerto de comunicaciones con el modem GPRS
     Precondiciones:
@@ -37,7 +37,7 @@ void ConfigGprsPort (void)
 
 /*************************************************************************
     Nombre de la función: 	Gprs_SendMessageReadResponse()
-    Responsable: 			Javier Alcina
+    Responsable: Javier Alcina
     Descripción:
         Función para enviar mensajes y obtener respuesta del modem GPRS
     Precondiciones:
@@ -62,7 +62,7 @@ void Gprs_SendMessageReadResponse (char *bufferIn, char *bufferOut)
 
 /*************************************************************************
     Nombre de la función: 	CheckSIM()
-    Responsable: 			Javier Alcina
+    Responsable: Javier Alcina
     Descripción:
         Función para comprobar que la tarjeta SIM está introducida
     Precondiciones:
@@ -95,7 +95,7 @@ unsigned char CheckSIM (void)
 
 /*************************************************************************
     Nombre de la función: 	CheckNetwork()
-    Responsable: 			Javier Alcina
+    Responsable: Javier Alcina
     Descripción:
         Función para comprobar que el modem está conectado a la red
     Precondiciones:
@@ -128,7 +128,7 @@ unsigned char CheckNetwork (void)
 
 /*************************************************************************
     Nombre de la función: 	CheckSignalQuality()
-    Responsable: 			Javier Alcina
+    Responsable: Javier Alcina
     Descripción:
         Función para comprobar que el modem está conectado a la red
     Precondiciones:
@@ -167,7 +167,7 @@ int CheckSignalQuality (void)
 
 /*************************************************************************
     Nombre de la función: 	RetrieveNetworkOperator()
-    Responsable: 			Javier Alcina
+    Responsable: Javier Alcina
     Descripción:
         Función para comprobar que el modem está conectado al operador
         que corresponde
@@ -202,7 +202,7 @@ unsigned char RetrieveNetworkOperator (void)
 
 /*************************************************************************
     Nombre de la función: 	EstablishGprsConnection()
-    Responsable: 			Javier Alcina
+    Responsable: Javier Alcina
     Descripción:
         Función para establecer conectividad GPRS
     Precondiciones:
@@ -236,7 +236,7 @@ unsigned char EstablishGprsConnection (void)
 
 /*************************************************************************
     Nombre de la función: 	ConnectWithOurServer()
-    Responsable: 			Javier Alcina
+    Responsable: Javier Alcina
     Descripción:
         Función para conectar con servidor establecido
     Precondiciones:
@@ -270,7 +270,7 @@ unsigned char ConnectWithOurServer (void)
 
 /*************************************************************************
     Nombre de la función: 	CheckServerConnection()
-    Responsable: 			Javier Alcina
+    Responsable: Javier Alcina
     Descripción:
         Función para verificar que se ha conectado al servidor
     Precondiciones:
@@ -304,7 +304,7 @@ unsigned char CheckServerConnection (void)
 
 /*************************************************************************
     Nombre de la función: 	OpenGprsSession()
-    Responsable: 			Javier Alcina
+    Responsable: Javier Alcina
     Descripción:
         Función para establecer conectividad GPRS
     Precondiciones:
@@ -338,7 +338,7 @@ unsigned char OpenGprsSession (void)
 
 /*************************************************************************
     Nombre de la función: 	CloseGprsSession()
-    Responsable: 			Javier Alcina
+    Responsable: Javier Alcina
     Descripción:
         Función para establecer conectividad GPRS
     Precondiciones:
@@ -372,7 +372,7 @@ unsigned char CloseGprsSession (void)
 
 /*************************************************************************
     Nombre de la función: 	CloseGprsConnection()
-    Responsable: 			Javier Alcina
+    Responsable: Javier Alcina
     Descripción:
         Función para cerrar la conexión GPRS
     Precondiciones:
@@ -406,7 +406,7 @@ unsigned char CloseGprsConnection (void)
 
 /*************************************************************************
     Nombre de la función: 	GprsStartSequence()
-    Responsable: 			Javier Alcina
+    Responsable: Javier Alcina
     Descripción:
         Función con la secuencia de llamadas para establecer conectividad GPRS
         Si se utiliza esta función no se necesita usar las anteriores de manera 
@@ -460,7 +460,7 @@ unsigned char GprsStartSequence (void)
 
 /*************************************************************************
     Nombre de la función: 	GprsReconnectSequence()
-    Responsable: 			Javier Alcina
+    Responsable: Javier Alcina
     Descripción:
         Secuencia para reestablecer conectividad GPRS (esta función 
         no abre socket).
@@ -501,7 +501,7 @@ unsigned char GprsReconnectSequence (void)
 
 /*************************************************************************
     Nombre de la función: 	GprsCloseSequence()
-    Responsable: 			Javier Alcina
+    Responsable: Javier Alcina
     Descripción:
         Secuencia de cierre de conexión
     Precondiciones:
@@ -529,7 +529,7 @@ unsigned char GprsCloseSequence (void)
 
 /*************************************************************************
     Nombre de la función: 	GprsCloseSequence()
-    Responsable: 			Javier Alcina
+    Responsable: Javier Alcina
     Descripción:
         Secuencia de cierre de conexión
     Precondiciones:

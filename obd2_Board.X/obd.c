@@ -4,7 +4,7 @@ Tipo de fichero: 		Source File
 Fecha de creacion: 		17-Abril-2017
 Ultima modificacion: 	17-Abril-2017
 Compañia:				Universidad de Cádiz
-Responsable: 			Javier Alcina
+Responsable: Javier Alcina
  
 Proposito:
 En este fichero se definirán todas las funciones referentes a las 
@@ -19,7 +19,7 @@ Lista de modificaciones:
 
 /*************************************************************************
     Nombre de la función: 	ConfigObdPort()
-    Responsable: 			Javier Alcina
+    Responsable: Javier Alcina
     Descripción:
         Configurar el puerto de comunicaciones con el chip OBD
     Precondiciones:
@@ -36,7 +36,7 @@ void ConfigObdPort (void)
 
 /*************************************************************************
     Nombre de la función: 	ReadGpsGprmcCommand()
-    Responsable: 			Javier Alcina
+    Responsable: Javier Alcina
     Descripción:
         Función para enviar mensajes y obtener respuesta del chip OBD
     Precondiciones:
@@ -62,7 +62,7 @@ void Obd_SendMessageReadResponse (char *bufferIn, char *bufferOut)
 
 /*************************************************************************
     Nombre de la función: 	RequestDataFromOBD()
-    Responsable: 			Javier Alcina
+    Responsable: Javier Alcina
     Descripción:
         Función con secuencia de peticiones de datos al chip OBD
     Precondiciones:
@@ -87,7 +87,7 @@ void RequestDataFromOBD (void)
  
 /*************************************************************************
     Nombre de la función: 	ConnectWithObdInterpreter()
-    Responsable: 			Javier Alcina
+    Responsable: Javier Alcina
     Descripción:
         Función para conectar con el chip OBD
     Precondiciones:
@@ -118,7 +118,7 @@ unsigned char ConnectWithObdInterpreter (void)
 
 /*************************************************************************
     Nombre de la función: 	ReadSpeedFromOBD()
-    Responsable: 			Javier Alcina
+    Responsable: Javier Alcina
     Descripción:
         Función para solicitar la velocidad del vehículo al chip OBD
     Precondiciones:
@@ -144,7 +144,7 @@ void ReadSpeedFromOBD (char *speedOBD)
 
 /*************************************************************************
     Nombre de la función: 	ReadRpmFromOBD()
-    Responsable: 			Javier Alcina
+    Responsable: Javier Alcina
     Descripción:
         Función para solicitar las revoluciones por minuto del motor
     Precondiciones:
@@ -167,7 +167,7 @@ void ReadRpmFromOBD (char *rpmOBD)
 
 /*************************************************************************
     Nombre de la función: 	ReadTemperatureFromOBD()
-    Responsable: 			Javier Alcina
+    Responsable: Javier Alcina
     Descripción:
         Función para solicitar la temperatura del refrigerante del motor
     Precondiciones:
@@ -193,7 +193,7 @@ void ReadTemperatureFromOBD (char *tempOBD)
 
 /*************************************************************************
     Nombre de la función: 	ReadThrottleFromOBD()
-    Responsable: 			Javier Alcina
+    Responsable: Javier Alcina
     Descripción:
         Función para solicitar el % de presión en el pedal de aceleración
     Precondiciones:
@@ -219,7 +219,7 @@ void ReadThrottleFromOBD (char *throttleOBD)
 
 /*************************************************************************
     Nombre de la función: 	ReadDTCsFromOBD()
-    Responsable: 			Javier Alcina
+    Responsable: Javier Alcina
     Descripción:
         Función para solicitar el nº de DTCs en el vehículo al chip OBD
     Precondiciones:
@@ -261,7 +261,7 @@ void ReadDTCsFromOBD (char *milLamp, char *numDTCs)
 
 /*************************************************************************
     Nombre de la función: 	CleanDtcsFromOBD()
-    Responsable: 			Javier Alcina
+    Responsable: Javier Alcina
     Descripción:
         Función para limpiar DTCs del vehículo mediante el chip OBD
     Precondiciones:
@@ -282,7 +282,7 @@ void CleanDtcsFromOBD (void)
 
 /*************************************************************************
     Nombre de la función: 	ReadVINFromOBD()
-    Responsable: 			Javier Alcina
+    Responsable: Javier Alcina
     Descripción:
         Función para solicitar el nº de bastidor del vehículo al chip OBD
     Precondiciones:
@@ -308,7 +308,7 @@ void ReadVINFromOBD (char *vinOBD)
 
 /*************************************************************************
     Nombre de la función: 	ReadPressureFromOBD()
-    Responsable: 			Javier Alcina
+    Responsable: Javier Alcina
     Descripción:
         Función para solicitar la presión atmosférica al chip OBD
     Precondiciones:

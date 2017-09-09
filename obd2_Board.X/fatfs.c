@@ -44,6 +44,18 @@ unsigned long file_length = 0;
 
 char address_buffer[10];
 
+/*************************************************************************
+    Nombre de la función: 	mount_disk()
+    Responsable: Javier Alcina
+    Descripción:
+        Configurar el puerto de comunicaciones con el modem GPRS
+    Precondiciones:
+        Ninguna
+    Returns
+        Ninguno
+    Parametros
+        Ninguno
+************************************************************************/
 void mount_disk(void){
     // read sector 0 (MBR) from card
     SDcard_read_block(0x00000000);
@@ -91,6 +103,18 @@ void mount_disk(void){
     datareg_start = rootdir_start + ((unsigned long)root_entries * 32);
 }
 
+/*************************************************************************
+    Nombre de la función: 	file_create()
+    Responsable: Javier Alcina
+    Descripción:
+        Configurar el puerto de comunicaciones con el modem GPRS
+    Precondiciones:
+        Ninguna
+    Returns
+        Ninguno
+    Parametros
+        Ninguno
+************************************************************************/
 void file_create(const unsigned char* filename){
     // read first sector of FAT1
     SDcard_read_block(FAT_address[0]);
@@ -180,17 +204,53 @@ void file_create(const unsigned char* filename){
     SDcard_write_block(rootdir_start);
 }
 
+/*************************************************************************
+    Nombre de la función: 	sector_open()
+    Responsable: Javier Alcina
+    Descripción:
+        Configurar el puerto de comunicaciones con el modem GPRS
+    Precondiciones:
+        Ninguna
+    Returns
+        Ninguno
+    Parametros
+        Ninguno
+************************************************************************/
 void sector_open(void){
     // read sector of cluster
     current_sector_address = start_sector_address + ((unsigned long)current_sector * (unsigned long)sector_size);
     SDcard_read_block(current_sector_address);
 }
 
+/*************************************************************************
+    Nombre de la función: 	sector_close()
+    Responsable: Javier Alcina
+    Descripción:
+        Configurar el puerto de comunicaciones con el modem GPRS
+    Precondiciones:
+        Ninguna
+    Returns
+        Ninguno
+    Parametros
+        Ninguno
+************************************************************************/
 void sector_close(void){
     // write sector to card
     SDcard_write_block(current_sector_address);
 }
 
+/*************************************************************************
+    Nombre de la función: 	file_append()
+    Responsable: Javier Alcina
+    Descripción:
+        Configurar el puerto de comunicaciones con el modem GPRS
+    Precondiciones:
+        Ninguna
+    Returns
+        Ninguno
+    Parametros
+        Ninguno
+************************************************************************/
 void file_append(const unsigned char* string){
     // offset from beginning of write
     // (byte number)
@@ -214,11 +274,22 @@ void file_append(const unsigned char* string){
     }
 }
 
+/*************************************************************************
+    Nombre de la función: 	file_update_size()
+    Responsable: Javier Alcina
+    Descripción:
+        Configurar el puerto de comunicaciones con el modem GPRS
+    Precondiciones:
+        Ninguna
+    Returns
+        Ninguno
+    Parametros
+        Ninguno
+************************************************************************/
 void file_update_size(void){
     // read first sector of root directory table
     SDcard_read_block(rootdir_start);
     // copy read sector to SDWdata
-
 
     // set file size
     SDdata[entry_addr+0x1C] = file_length & 0xFF;
