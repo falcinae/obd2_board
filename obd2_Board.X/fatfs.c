@@ -1,3 +1,17 @@
+/*************************************************************************
+Nombre del fichero: 	fatfs.c
+Tipo de fichero: 		Source File
+Fecha de creacion: 		17-Abril-2017
+Ultima modificacion: 	17-Abril-2017
+Compañia:				Universidad de Cádiz
+Responsable: Javier Alcina
+ 
+Proposito:
+En este fichero se encuentra la librería para dar formato a la microSD
+y las operaciones de lectura y escritura.
+
+Lista de modificaciones:
+************************************************************************/
 
 #include <xc.h>
 #include <stdlib.h>
@@ -48,7 +62,7 @@ char address_buffer[10];
     Nombre de la función: 	mount_disk()
     Responsable: Javier Alcina
     Descripción:
-        Configurar el puerto de comunicaciones con el modem GPRS
+        Dar formato a la tarjea microSDt    
     Precondiciones:
         Ninguna
     Returns
@@ -107,13 +121,13 @@ void mount_disk(void){
     Nombre de la función: 	file_create()
     Responsable: Javier Alcina
     Descripción:
-        Configurar el puerto de comunicaciones con el modem GPRS
+        Crear el fichero en la microSD donde se almacenarán los datos del viaje
     Precondiciones:
         Ninguna
     Returns
         Ninguno
     Parametros
-        Ninguno
+        const unsigned char* filename -> puntero a nombre de fichero
 ************************************************************************/
 void file_create(const unsigned char* filename){
     // read first sector of FAT1
@@ -208,7 +222,7 @@ void file_create(const unsigned char* filename){
     Nombre de la función: 	sector_open()
     Responsable: Javier Alcina
     Descripción:
-        Configurar el puerto de comunicaciones con el modem GPRS
+        Abrir sector de escritura en la tarjeta microSD
     Precondiciones:
         Ninguna
     Returns
@@ -226,7 +240,7 @@ void sector_open(void){
     Nombre de la función: 	sector_close()
     Responsable: Javier Alcina
     Descripción:
-        Configurar el puerto de comunicaciones con el modem GPRS
+        Cerrar sector
     Precondiciones:
         Ninguna
     Returns
@@ -243,13 +257,13 @@ void sector_close(void){
     Nombre de la función: 	file_append()
     Responsable: Javier Alcina
     Descripción:
-        Configurar el puerto de comunicaciones con el modem GPRS
+        Escribir en el fichero a continuación de lo último escrito
     Precondiciones:
         Ninguna
     Returns
         Ninguno
     Parametros
-        Ninguno
+        const unsigned char* string -> puntero a cadena a escribir
 ************************************************************************/
 void file_append(const unsigned char* string){
     // offset from beginning of write
@@ -278,7 +292,7 @@ void file_append(const unsigned char* string){
     Nombre de la función: 	file_update_size()
     Responsable: Javier Alcina
     Descripción:
-        Configurar el puerto de comunicaciones con el modem GPRS
+        Modificar la dirección para la siguiente escritura.
     Precondiciones:
         Ninguna
     Returns

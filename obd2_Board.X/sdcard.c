@@ -31,7 +31,7 @@ unsigned int timeout = SD_TIMEOUT;
     Nombre de la función: 	SDcard_init()
     Responsable: Javier Alcina
     Descripción:
-        Configurar el puerto de comunicaciones con el modem GPRS
+        Inicialización de la tarjeta microSD
     Precondiciones:
         Ninguna
     Returns
@@ -100,13 +100,13 @@ void SDcard_init(void)
     Nombre de la función: 	SDcard_read_block()
     Responsable: Javier Alcina
     Descripción:
-        Configurar el puerto de comunicaciones con el modem GPRS
+        Leer bloque de tarjeta microSD
     Precondiciones:
         Ninguna
     Returns
         Ninguno
     Parametros
-        Ninguno
+        unsigned long address -> Dirección de comienzo de lectura
 ************************************************************************/
 void SDcard_read_block(unsigned long address)
 {
@@ -147,13 +147,13 @@ void SDcard_read_block(unsigned long address)
     Nombre de la función: 	SDcard_write_block()
     Responsable: Javier Alcina
     Descripción:
-        Configurar el puerto de comunicaciones con el modem GPRS
+        Escribir bloque de tarjeta microSD
     Precondiciones:
         Ninguna
     Returns
         Ninguno
     Parametros
-        Ninguno
+        unsigned long address -> Dirección de comienzo de escritura
 ************************************************************************/
 void SDcard_write_block(unsigned long address)
 {
@@ -200,13 +200,13 @@ void SDcard_write_block(unsigned long address)
     Nombre de la función: 	SDcard_get_response()
     Responsable: Javier Alcina
     Descripción:
-        Configurar el puerto de comunicaciones con el modem GPRS
+        Leer respuesta de tarjeta microSD
     Precondiciones:
         Ninguna
     Returns
         Ninguno
     Parametros
-        Ninguno
+        unsigned char response -> Byte leído
 ************************************************************************/
 unsigned char SDcard_get_response(unsigned char response)
 {

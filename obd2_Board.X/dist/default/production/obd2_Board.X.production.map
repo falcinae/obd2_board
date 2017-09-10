@@ -153,12 +153,12 @@ Program Memory  [Origin = 0x200, Length = 0x155f8]
 section                    address   length (PC units)   length (bytes) (dec)
 -------                    -------   -----------------   --------------------
 .text                        0x200              0x14be          0x1f1d  (7965)
-.const                      0x16be               0x136           0x1d1  (465)
-.text                       0x17f4              0x2182          0x3243  (12867)
-.dinit                      0x3976                0xf0           0x168  (360)
-.text                       0x3a66               0x244           0x366  (870)
+.const                      0x16be               0x13c           0x1da  (474)
+.text                       0x17fa              0x21aa          0x327f  (12927)
+.dinit                      0x39a4                0xf0           0x168  (360)
+.text                       0x3a94               0x244           0x366  (870)
 
-                 Total program memory used (bytes):         0x57ff  (22527) 17%
+                 Total program memory used (bytes):         0x5844  (22596) 17%
 
 
 Ivt Memory  [Origin = 0x4, Length = 0xfc]
@@ -351,296 +351,296 @@ External Symbols in Program Memory (by address):
                   0x0015fa                  ___umoddi3
                   0x001602                  ___divdi3
                   0x001662                  ___moddi3
-                  0x0017f4                  _mount_disk
-                  0x001956                  _file_create
-                  0x001b34                  _sector_open
-                  0x001b66                  _sector_close
-                  0x001b72                  _file_append
-                  0x001bb8                  _file_update_size
-                  0x001c0e                  _ConfigGprsPort
-                  0x001c16                  _Gprs_SendMessageReadResponse
-                  0x001c3c                  _CheckSIM
-                  0x001c86                  _CheckNetwork
-                  0x001cd0                  _CheckSignalQuality
-                  0x001d30                  _RetrieveNetworkOperator
-                  0x001d7a                  _EstablishGprsConnection
-                  0x001dc4                  _ConnectWithOurServer
-                  0x001e0e                  _CheckServerConnection
-                  0x001e58                  _OpenGprsSession
-                  0x001ea2                  _CloseGprsSession
-                  0x001eec                  _CloseGprsConnection
-                  0x001f36                  _GprsStartSequence
-                  0x001f8e                  _GprsReconnectSequence
-                  0x001fc8                  _GprsCloseSequence
-                  0x001fe4                  _SendDataToGprs
-                  0x00200a                  _ConfigObdPort
-                  0x002012                  _Obd_SendMessageReadResponse
-                  0x002032                  _RequestDataFromOBD
-                  0x002056                  _ConnectWithObdInterpreter
-                  0x0020a6                  _ReadSpeedFromOBD
-                  0x0020f4                  _ReadRpmFromOBD
-                  0x00211e                  _ReadTemperatureFromOBD
-                  0x00216c                  _ReadThrottleFromOBD
-                  0x0021ba                  _ReadDTCsFromOBD
-                  0x002246                  _CleanDtcsFromOBD
-                  0x002264                  _ReadVINFromOBD
-                  0x0022b2                  _ReadPressureFromOBD
-                  0x002300                  _RTCC_Initialize
-                  0x00233c                  _RTCC_TimeReset
-                  0x002352                  _RTCC_TimeGet
-                  0x002404                  _RTCC_TimeSet
-                  0x002488                  _RTCC_BCDTimeGet
-                  0x002522                  _RTCC_BCDTimeSet
-                  0x0025c6                  _SDcard_init
-                  0x0026a2                  _SDcard_read_block
-                  0x00271c                  _SDcard_write_block
-                  0x0027a2                  _SDcard_get_response
-                  0x0027e2                  _UART1_Initialize
-                  0x002820                  _UART1_Read
-                  0x002856                  _UART1_ReadBuffer
-                  0x00288a                  _UART1_Write
-                  0x0028c0                  _UART1_WriteBuffer
-                  0x0028f2                  _UART1_TransferStatusGet
-                  0x00292e                  _UART1_Peek
-                  0x002956                  _UART1_ReceiveBufferSizeGet
-                  0x002984                  _UART1_TransmitBufferSizeGet
-                  0x0029b4                  _UART1_ReceiveBufferIsEmpty
-                  0x0029cc                  _UART1_TransmitBufferIsFull
-                  0x0029e4                  _UART1_StatusGet
-                  0x0029ec                  _UART2_Initialize
-                  0x002a2a                  _UART2_Read
-                  0x002a60                  _UART2_ReadBuffer
-                  0x002a94                  _UART2_Write
-                  0x002aca                  _UART2_WriteBuffer
-                  0x002afc                  _UART2_TransferStatusGet
-                  0x002b38                  _UART2_Peek
-                  0x002b60                  _UART2_ReceiveBufferSizeGet
-                  0x002b8e                  _UART2_TransmitBufferSizeGet
-                  0x002bbe                  _UART2_ReceiveBufferIsEmpty
-                  0x002bd6                  _UART2_TransmitBufferIsFull
-                  0x002bee                  _UART2_StatusGet
-                  0x002bf6                  _UART3_Initialize
-                  0x002c34                  _UART3_Read
-                  0x002c6a                  _UART3_ReadBuffer
-                  0x002c9e                  _UART3_Write
-                  0x002cd4                  _UART3_WriteBuffer
-                  0x002d06                  _UART3_TransferStatusGet
-                  0x002d42                  _UART3_Peek
-                  0x002d6a                  _UART3_ReceiveBufferSizeGet
-                  0x002d98                  _UART3_TransmitBufferSizeGet
-                  0x002dc8                  _UART3_ReceiveBufferIsEmpty
-                  0x002de0                  _UART3_TransmitBufferIsFull
-                  0x002df8                  _UART3_StatusGet
-                  0x002e00                  _UART4_Initialize
-                  0x002e3e                  _UART4_Read
-                  0x002e74                  _UART4_ReadBuffer
-                  0x002ea8                  _UART4_Write
-                  0x002ede                  _UART4_WriteBuffer
-                  0x002f10                  _UART4_TransferStatusGet
-                  0x002f4c                  _UART4_Peek
-                  0x002f74                  _UART4_ReceiveBufferSizeGet
-                  0x002fa2                  _UART4_TransmitBufferSizeGet
-                  0x002fd2                  _UART4_ReceiveBufferIsEmpty
-                  0x002fea                  _UART4_TransmitBufferIsFull
-                  0x003002                  _UART4_StatusGet
-                  0x00300a                  _I2C1_Initialize
-                  0x003040                  _I2C1_ErrorCountGet
-                  0x00308a                  _I2C1_MasterWrite
-                  0x0030bc                  _I2C1_MasterRead
-                  0x0030ee                  _I2C1_MasterTRBInsert
-                  0x003166                  _I2C1_MasterReadTRBBuild
-                  0x003196                  _I2C1_MasterWriteTRBBuild
-                  0x0031ba                  _I2C1_MasterQueueIsEmpty
-                  0x0031d4                  _I2C1_MasterQueueIsFull
-                  0x0031ec                  _SPI1_Initialize
-                  0x0031fe                  _SPI1_Exchange
-                  0x003266                  _SPI1_ExchangeBuffer
-                  0x003380                  _SPI1_Exchange8bit
-                  0x003390                  _SPI1_Exchange8bitBuffer
-                  0x0033a4                  _SPI1_TransferModeGet
-                  0x0033ba                  _SPI1_StatusGet
-                  0x0033c2                  _SPI2_Initialize
-                  0x0033d4                  _SPI2_Exchange
-                  0x00343c                  _SPI2_ExchangeBuffer
-                  0x003556                  _SPI2_Exchange8bit
-                  0x003566                  _SPI2_Exchange8bitBuffer
-                  0x00357a                  _SPI2_TransferModeGet
-                  0x003590                  _SPI2_StatusGet
-                  0x003598                  _GoToSleep
-                  0x0035a6                  _ReStartSystem
-                  0x0035be                  _IsOnTrip
-                  0x0035ea                  _MeasureIgnitionLevel
-                  0x00361e                  _StoreTripData
-                  0x00362a                  _SendTripData
-                  0x003640                  _RequestConfigurationFromHost
-                  0x003648                  _main
-                  0x003728                  _PIN_MANAGER_Initialize
-                  0x00386e                  _ConfigGpsPort
-                  0x003876                  _ReadGpsGprmcCommand
-                  0x003a66                  _INTERRUPT_Initialize
-                  0x003b20                  _TMR1_Initialize
-                  0x003b3a                  _TMR1_Period16BitSet
-                  0x003b4c                  _TMR1_Period16BitGet
-                  0x003b54                  _TMR1_Counter16BitSet
-                  0x003b66                  _TMR1_Counter16BitGet
-                  0x003b74                  _TMR1_Start
-                  0x003b84                  _TMR1_Stop
-                  0x003b8e                  _TMR1_GetElapsedThenClear
-                  0x003ba6                  _TMR1_SoftwareCounterGet
-                  0x003bb2                  _TMR1_SoftwareCounterClear
-                  0x003bbe                  _ADC1_Initialize
-                  0x003be2                  _ADC1_Start
-                  0x003bea                  _ADC1_Stop
-                  0x003bf2                  _ADC1_ConversionResultBufferGet
-                  0x003c24                  _ADC1_ConversionResultGet
-                  0x003c2c                  _ADC1_IsConversionComplete
-                  0x003c44                  _ADC1_ChannelSelect
-                  0x003c50                  _SYSTEM_Initialize
-                  0x003c72                  _OSCILLATOR_Initialize
-                  0x003ca4                  _EXT_INT_Initialize
+                  0x0017fa                  _mount_disk
+                  0x00195c                  _file_create
+                  0x001b3a                  _sector_open
+                  0x001b6c                  _sector_close
+                  0x001b78                  _file_append
+                  0x001bbe                  _file_update_size
+                  0x001c14                  _ConfigGprsPort
+                  0x001c1c                  _Gprs_SendMessageReadResponse
+                  0x001c42                  _CheckSIM
+                  0x001c8c                  _CheckNetwork
+                  0x001cd6                  _CheckSignalQuality
+                  0x001d36                  _RetrieveNetworkOperator
+                  0x001d80                  _EstablishGprsConnection
+                  0x001dca                  _ConnectWithOurServer
+                  0x001e14                  _CheckServerConnection
+                  0x001e5e                  _OpenGprsSession
+                  0x001ea8                  _CloseGprsSession
+                  0x001ef2                  _CloseGprsConnection
+                  0x001f3c                  _GprsStartSequence
+                  0x001f94                  _GprsReconnectSequence
+                  0x001fce                  _GprsCloseSequence
+                  0x001fea                  _SendDataToGprs
+                  0x002010                  _ConfigObdPort
+                  0x002018                  _Obd_SendMessageReadResponse
+                  0x002038                  _RequestDataFromOBD
+                  0x00205c                  _ConnectWithObdInterpreter
+                  0x0020ac                  _ReadSpeedFromOBD
+                  0x0020fa                  _ReadRpmFromOBD
+                  0x002124                  _ReadTemperatureFromOBD
+                  0x002172                  _ReadThrottleFromOBD
+                  0x0021c0                  _ReadDTCsFromOBD
+                  0x00224c                  _CleanDtcsFromOBD
+                  0x00226a                  _ReadVINFromOBD
+                  0x0022b8                  _ReadPressureFromOBD
+                  0x002306                  _RTCC_Initialize
+                  0x002342                  _RTCC_TimeReset
+                  0x002358                  _RTCC_TimeGet
+                  0x00240a                  _RTCC_TimeSet
+                  0x00248e                  _RTCC_BCDTimeGet
+                  0x002528                  _RTCC_BCDTimeSet
+                  0x0025cc                  _SDcard_init
+                  0x0026a8                  _SDcard_read_block
+                  0x002722                  _SDcard_write_block
+                  0x0027a8                  _SDcard_get_response
+                  0x0027e8                  _UART1_Initialize
+                  0x002826                  _UART1_Read
+                  0x00285c                  _UART1_ReadBuffer
+                  0x002890                  _UART1_Write
+                  0x0028c6                  _UART1_WriteBuffer
+                  0x0028f8                  _UART1_TransferStatusGet
+                  0x002934                  _UART1_Peek
+                  0x00295c                  _UART1_ReceiveBufferSizeGet
+                  0x00298a                  _UART1_TransmitBufferSizeGet
+                  0x0029ba                  _UART1_ReceiveBufferIsEmpty
+                  0x0029d2                  _UART1_TransmitBufferIsFull
+                  0x0029ea                  _UART1_StatusGet
+                  0x0029f2                  _UART2_Initialize
+                  0x002a30                  _UART2_Read
+                  0x002a66                  _UART2_ReadBuffer
+                  0x002a9a                  _UART2_Write
+                  0x002ad0                  _UART2_WriteBuffer
+                  0x002b02                  _UART2_TransferStatusGet
+                  0x002b3e                  _UART2_Peek
+                  0x002b66                  _UART2_ReceiveBufferSizeGet
+                  0x002b94                  _UART2_TransmitBufferSizeGet
+                  0x002bc4                  _UART2_ReceiveBufferIsEmpty
+                  0x002bdc                  _UART2_TransmitBufferIsFull
+                  0x002bf4                  _UART2_StatusGet
+                  0x002bfc                  _UART3_Initialize
+                  0x002c3a                  _UART3_Read
+                  0x002c70                  _UART3_ReadBuffer
+                  0x002ca4                  _UART3_Write
+                  0x002cda                  _UART3_WriteBuffer
+                  0x002d0c                  _UART3_TransferStatusGet
+                  0x002d48                  _UART3_Peek
+                  0x002d70                  _UART3_ReceiveBufferSizeGet
+                  0x002d9e                  _UART3_TransmitBufferSizeGet
+                  0x002dce                  _UART3_ReceiveBufferIsEmpty
+                  0x002de6                  _UART3_TransmitBufferIsFull
+                  0x002dfe                  _UART3_StatusGet
+                  0x002e06                  _UART4_Initialize
+                  0x002e44                  _UART4_Read
+                  0x002e7a                  _UART4_ReadBuffer
+                  0x002eae                  _UART4_Write
+                  0x002ee4                  _UART4_WriteBuffer
+                  0x002f16                  _UART4_TransferStatusGet
+                  0x002f52                  _UART4_Peek
+                  0x002f7a                  _UART4_ReceiveBufferSizeGet
+                  0x002fa8                  _UART4_TransmitBufferSizeGet
+                  0x002fd8                  _UART4_ReceiveBufferIsEmpty
+                  0x002ff0                  _UART4_TransmitBufferIsFull
+                  0x003008                  _UART4_StatusGet
+                  0x003010                  _I2C1_Initialize
+                  0x003046                  _I2C1_ErrorCountGet
+                  0x003090                  _I2C1_MasterWrite
+                  0x0030c2                  _I2C1_MasterRead
+                  0x0030f4                  _I2C1_MasterTRBInsert
+                  0x00316c                  _I2C1_MasterReadTRBBuild
+                  0x00319c                  _I2C1_MasterWriteTRBBuild
+                  0x0031c0                  _I2C1_MasterQueueIsEmpty
+                  0x0031da                  _I2C1_MasterQueueIsFull
+                  0x0031f2                  _SPI1_Initialize
+                  0x003204                  _SPI1_Exchange
+                  0x00326c                  _SPI1_ExchangeBuffer
+                  0x003386                  _SPI1_Exchange8bit
+                  0x003396                  _SPI1_Exchange8bitBuffer
+                  0x0033aa                  _SPI1_TransferModeGet
+                  0x0033c0                  _SPI1_StatusGet
+                  0x0033c8                  _SPI2_Initialize
+                  0x0033da                  _SPI2_Exchange
+                  0x003442                  _SPI2_ExchangeBuffer
+                  0x00355c                  _SPI2_Exchange8bit
+                  0x00356c                  _SPI2_Exchange8bitBuffer
+                  0x003580                  _SPI2_TransferModeGet
+                  0x003596                  _SPI2_StatusGet
+                  0x00359e                  _GoToSleep
+                  0x0035ae                  _ReStartSystem
+                  0x0035c6                  _IsOnTrip
+                  0x0035f2                  _MeasureIgnitionLevel
+                  0x003626                  _StoreTripData
+                  0x00363a                  _SendTripData
+                  0x003650                  _RequestConfigurationFromHost
+                  0x003658                  _main
+                  0x003756                  _PIN_MANAGER_Initialize
+                  0x00389c                  _ConfigGpsPort
+                  0x0038a4                  _ReadGpsGprmcCommand
+                  0x003a94                  _INTERRUPT_Initialize
+                  0x003b4e                  _TMR1_Initialize
+                  0x003b68                  _TMR1_Period16BitSet
+                  0x003b7a                  _TMR1_Period16BitGet
+                  0x003b82                  _TMR1_Counter16BitSet
+                  0x003b94                  _TMR1_Counter16BitGet
+                  0x003ba2                  _TMR1_Start
+                  0x003bb2                  _TMR1_Stop
+                  0x003bbc                  _TMR1_GetElapsedThenClear
+                  0x003bd4                  _TMR1_SoftwareCounterGet
+                  0x003be0                  _TMR1_SoftwareCounterClear
+                  0x003bec                  _ADC1_Initialize
+                  0x003c10                  _ADC1_Start
+                  0x003c18                  _ADC1_Stop
+                  0x003c20                  _ADC1_ConversionResultBufferGet
+                  0x003c52                  _ADC1_ConversionResultGet
+                  0x003c5a                  _ADC1_IsConversionComplete
+                  0x003c72                  _ADC1_ChannelSelect
+                  0x003c7e                  _SYSTEM_Initialize
+                  0x003ca0                  _OSCILLATOR_Initialize
+                  0x003cd2                  _EXT_INT_Initialize
 
 External Symbols in Program Memory (by name):
 
-                  0x003c44                  _ADC1_ChannelSelect
-                  0x003bf2                  _ADC1_ConversionResultBufferGet
-                  0x003c24                  _ADC1_ConversionResultGet
-                  0x003bbe                  _ADC1_Initialize
-                  0x003c2c                  _ADC1_IsConversionComplete
-                  0x003be2                  _ADC1_Start
-                  0x003bea                  _ADC1_Stop
-                  0x001c86                  _CheckNetwork
-                  0x001c3c                  _CheckSIM
-                  0x001e0e                  _CheckServerConnection
-                  0x001cd0                  _CheckSignalQuality
-                  0x002246                  _CleanDtcsFromOBD
-                  0x001eec                  _CloseGprsConnection
-                  0x001ea2                  _CloseGprsSession
-                  0x001c0e                  _ConfigGprsPort
-                  0x00386e                  _ConfigGpsPort
-                  0x00200a                  _ConfigObdPort
-                  0x002056                  _ConnectWithObdInterpreter
-                  0x001dc4                  _ConnectWithOurServer
-                  0x003ca4                  _EXT_INT_Initialize
-                  0x001d7a                  _EstablishGprsConnection
-                  0x003598                  _GoToSleep
-                  0x001fc8                  _GprsCloseSequence
-                  0x001f8e                  _GprsReconnectSequence
-                  0x001f36                  _GprsStartSequence
-                  0x001c16                  _Gprs_SendMessageReadResponse
-                  0x003040                  _I2C1_ErrorCountGet
-                  0x00300a                  _I2C1_Initialize
-                  0x0031ba                  _I2C1_MasterQueueIsEmpty
-                  0x0031d4                  _I2C1_MasterQueueIsFull
-                  0x0030bc                  _I2C1_MasterRead
-                  0x003166                  _I2C1_MasterReadTRBBuild
-                  0x0030ee                  _I2C1_MasterTRBInsert
-                  0x00308a                  _I2C1_MasterWrite
-                  0x003196                  _I2C1_MasterWriteTRBBuild
-                  0x003a66                  _INTERRUPT_Initialize
-                  0x0035be                  _IsOnTrip
-                  0x0035ea                  _MeasureIgnitionLevel
-                  0x003c72                  _OSCILLATOR_Initialize
-                  0x002012                  _Obd_SendMessageReadResponse
-                  0x001e58                  _OpenGprsSession
-                  0x003728                  _PIN_MANAGER_Initialize
-                  0x002488                  _RTCC_BCDTimeGet
-                  0x002522                  _RTCC_BCDTimeSet
-                  0x002300                  _RTCC_Initialize
-                  0x002352                  _RTCC_TimeGet
-                  0x00233c                  _RTCC_TimeReset
-                  0x002404                  _RTCC_TimeSet
-                  0x0035a6                  _ReStartSystem
-                  0x0021ba                  _ReadDTCsFromOBD
-                  0x003876                  _ReadGpsGprmcCommand
-                  0x0022b2                  _ReadPressureFromOBD
-                  0x0020f4                  _ReadRpmFromOBD
-                  0x0020a6                  _ReadSpeedFromOBD
-                  0x00211e                  _ReadTemperatureFromOBD
-                  0x00216c                  _ReadThrottleFromOBD
-                  0x002264                  _ReadVINFromOBD
-                  0x003640                  _RequestConfigurationFromHost
-                  0x002032                  _RequestDataFromOBD
-                  0x001d30                  _RetrieveNetworkOperator
-                  0x0027a2                  _SDcard_get_response
-                  0x0025c6                  _SDcard_init
-                  0x0026a2                  _SDcard_read_block
-                  0x00271c                  _SDcard_write_block
-                  0x0031fe                  _SPI1_Exchange
-                  0x003380                  _SPI1_Exchange8bit
-                  0x003390                  _SPI1_Exchange8bitBuffer
-                  0x003266                  _SPI1_ExchangeBuffer
-                  0x0031ec                  _SPI1_Initialize
-                  0x0033ba                  _SPI1_StatusGet
-                  0x0033a4                  _SPI1_TransferModeGet
-                  0x0033d4                  _SPI2_Exchange
-                  0x003556                  _SPI2_Exchange8bit
-                  0x003566                  _SPI2_Exchange8bitBuffer
-                  0x00343c                  _SPI2_ExchangeBuffer
-                  0x0033c2                  _SPI2_Initialize
-                  0x003590                  _SPI2_StatusGet
-                  0x00357a                  _SPI2_TransferModeGet
-                  0x003c50                  _SYSTEM_Initialize
-                  0x001fe4                  _SendDataToGprs
-                  0x00362a                  _SendTripData
-                  0x00361e                  _StoreTripData
-                  0x003b66                  _TMR1_Counter16BitGet
-                  0x003b54                  _TMR1_Counter16BitSet
-                  0x003b8e                  _TMR1_GetElapsedThenClear
-                  0x003b20                  _TMR1_Initialize
-                  0x003b4c                  _TMR1_Period16BitGet
-                  0x003b3a                  _TMR1_Period16BitSet
-                  0x003bb2                  _TMR1_SoftwareCounterClear
-                  0x003ba6                  _TMR1_SoftwareCounterGet
-                  0x003b74                  _TMR1_Start
-                  0x003b84                  _TMR1_Stop
-                  0x0027e2                  _UART1_Initialize
-                  0x00292e                  _UART1_Peek
-                  0x002820                  _UART1_Read
-                  0x002856                  _UART1_ReadBuffer
-                  0x0029b4                  _UART1_ReceiveBufferIsEmpty
-                  0x002956                  _UART1_ReceiveBufferSizeGet
-                  0x0029e4                  _UART1_StatusGet
-                  0x0028f2                  _UART1_TransferStatusGet
-                  0x0029cc                  _UART1_TransmitBufferIsFull
-                  0x002984                  _UART1_TransmitBufferSizeGet
-                  0x00288a                  _UART1_Write
-                  0x0028c0                  _UART1_WriteBuffer
-                  0x0029ec                  _UART2_Initialize
-                  0x002b38                  _UART2_Peek
-                  0x002a2a                  _UART2_Read
-                  0x002a60                  _UART2_ReadBuffer
-                  0x002bbe                  _UART2_ReceiveBufferIsEmpty
-                  0x002b60                  _UART2_ReceiveBufferSizeGet
-                  0x002bee                  _UART2_StatusGet
-                  0x002afc                  _UART2_TransferStatusGet
-                  0x002bd6                  _UART2_TransmitBufferIsFull
-                  0x002b8e                  _UART2_TransmitBufferSizeGet
-                  0x002a94                  _UART2_Write
-                  0x002aca                  _UART2_WriteBuffer
-                  0x002bf6                  _UART3_Initialize
-                  0x002d42                  _UART3_Peek
-                  0x002c34                  _UART3_Read
-                  0x002c6a                  _UART3_ReadBuffer
-                  0x002dc8                  _UART3_ReceiveBufferIsEmpty
-                  0x002d6a                  _UART3_ReceiveBufferSizeGet
-                  0x002df8                  _UART3_StatusGet
-                  0x002d06                  _UART3_TransferStatusGet
-                  0x002de0                  _UART3_TransmitBufferIsFull
-                  0x002d98                  _UART3_TransmitBufferSizeGet
-                  0x002c9e                  _UART3_Write
-                  0x002cd4                  _UART3_WriteBuffer
-                  0x002e00                  _UART4_Initialize
-                  0x002f4c                  _UART4_Peek
-                  0x002e3e                  _UART4_Read
-                  0x002e74                  _UART4_ReadBuffer
-                  0x002fd2                  _UART4_ReceiveBufferIsEmpty
-                  0x002f74                  _UART4_ReceiveBufferSizeGet
-                  0x003002                  _UART4_StatusGet
-                  0x002f10                  _UART4_TransferStatusGet
-                  0x002fea                  _UART4_TransmitBufferIsFull
-                  0x002fa2                  _UART4_TransmitBufferSizeGet
-                  0x002ea8                  _UART4_Write
-                  0x002ede                  _UART4_WriteBuffer
+                  0x003c72                  _ADC1_ChannelSelect
+                  0x003c20                  _ADC1_ConversionResultBufferGet
+                  0x003c52                  _ADC1_ConversionResultGet
+                  0x003bec                  _ADC1_Initialize
+                  0x003c5a                  _ADC1_IsConversionComplete
+                  0x003c10                  _ADC1_Start
+                  0x003c18                  _ADC1_Stop
+                  0x001c8c                  _CheckNetwork
+                  0x001c42                  _CheckSIM
+                  0x001e14                  _CheckServerConnection
+                  0x001cd6                  _CheckSignalQuality
+                  0x00224c                  _CleanDtcsFromOBD
+                  0x001ef2                  _CloseGprsConnection
+                  0x001ea8                  _CloseGprsSession
+                  0x001c14                  _ConfigGprsPort
+                  0x00389c                  _ConfigGpsPort
+                  0x002010                  _ConfigObdPort
+                  0x00205c                  _ConnectWithObdInterpreter
+                  0x001dca                  _ConnectWithOurServer
+                  0x003cd2                  _EXT_INT_Initialize
+                  0x001d80                  _EstablishGprsConnection
+                  0x00359e                  _GoToSleep
+                  0x001fce                  _GprsCloseSequence
+                  0x001f94                  _GprsReconnectSequence
+                  0x001f3c                  _GprsStartSequence
+                  0x001c1c                  _Gprs_SendMessageReadResponse
+                  0x003046                  _I2C1_ErrorCountGet
+                  0x003010                  _I2C1_Initialize
+                  0x0031c0                  _I2C1_MasterQueueIsEmpty
+                  0x0031da                  _I2C1_MasterQueueIsFull
+                  0x0030c2                  _I2C1_MasterRead
+                  0x00316c                  _I2C1_MasterReadTRBBuild
+                  0x0030f4                  _I2C1_MasterTRBInsert
+                  0x003090                  _I2C1_MasterWrite
+                  0x00319c                  _I2C1_MasterWriteTRBBuild
+                  0x003a94                  _INTERRUPT_Initialize
+                  0x0035c6                  _IsOnTrip
+                  0x0035f2                  _MeasureIgnitionLevel
+                  0x003ca0                  _OSCILLATOR_Initialize
+                  0x002018                  _Obd_SendMessageReadResponse
+                  0x001e5e                  _OpenGprsSession
+                  0x003756                  _PIN_MANAGER_Initialize
+                  0x00248e                  _RTCC_BCDTimeGet
+                  0x002528                  _RTCC_BCDTimeSet
+                  0x002306                  _RTCC_Initialize
+                  0x002358                  _RTCC_TimeGet
+                  0x002342                  _RTCC_TimeReset
+                  0x00240a                  _RTCC_TimeSet
+                  0x0035ae                  _ReStartSystem
+                  0x0021c0                  _ReadDTCsFromOBD
+                  0x0038a4                  _ReadGpsGprmcCommand
+                  0x0022b8                  _ReadPressureFromOBD
+                  0x0020fa                  _ReadRpmFromOBD
+                  0x0020ac                  _ReadSpeedFromOBD
+                  0x002124                  _ReadTemperatureFromOBD
+                  0x002172                  _ReadThrottleFromOBD
+                  0x00226a                  _ReadVINFromOBD
+                  0x003650                  _RequestConfigurationFromHost
+                  0x002038                  _RequestDataFromOBD
+                  0x001d36                  _RetrieveNetworkOperator
+                  0x0027a8                  _SDcard_get_response
+                  0x0025cc                  _SDcard_init
+                  0x0026a8                  _SDcard_read_block
+                  0x002722                  _SDcard_write_block
+                  0x003204                  _SPI1_Exchange
+                  0x003386                  _SPI1_Exchange8bit
+                  0x003396                  _SPI1_Exchange8bitBuffer
+                  0x00326c                  _SPI1_ExchangeBuffer
+                  0x0031f2                  _SPI1_Initialize
+                  0x0033c0                  _SPI1_StatusGet
+                  0x0033aa                  _SPI1_TransferModeGet
+                  0x0033da                  _SPI2_Exchange
+                  0x00355c                  _SPI2_Exchange8bit
+                  0x00356c                  _SPI2_Exchange8bitBuffer
+                  0x003442                  _SPI2_ExchangeBuffer
+                  0x0033c8                  _SPI2_Initialize
+                  0x003596                  _SPI2_StatusGet
+                  0x003580                  _SPI2_TransferModeGet
+                  0x003c7e                  _SYSTEM_Initialize
+                  0x001fea                  _SendDataToGprs
+                  0x00363a                  _SendTripData
+                  0x003626                  _StoreTripData
+                  0x003b94                  _TMR1_Counter16BitGet
+                  0x003b82                  _TMR1_Counter16BitSet
+                  0x003bbc                  _TMR1_GetElapsedThenClear
+                  0x003b4e                  _TMR1_Initialize
+                  0x003b7a                  _TMR1_Period16BitGet
+                  0x003b68                  _TMR1_Period16BitSet
+                  0x003be0                  _TMR1_SoftwareCounterClear
+                  0x003bd4                  _TMR1_SoftwareCounterGet
+                  0x003ba2                  _TMR1_Start
+                  0x003bb2                  _TMR1_Stop
+                  0x0027e8                  _UART1_Initialize
+                  0x002934                  _UART1_Peek
+                  0x002826                  _UART1_Read
+                  0x00285c                  _UART1_ReadBuffer
+                  0x0029ba                  _UART1_ReceiveBufferIsEmpty
+                  0x00295c                  _UART1_ReceiveBufferSizeGet
+                  0x0029ea                  _UART1_StatusGet
+                  0x0028f8                  _UART1_TransferStatusGet
+                  0x0029d2                  _UART1_TransmitBufferIsFull
+                  0x00298a                  _UART1_TransmitBufferSizeGet
+                  0x002890                  _UART1_Write
+                  0x0028c6                  _UART1_WriteBuffer
+                  0x0029f2                  _UART2_Initialize
+                  0x002b3e                  _UART2_Peek
+                  0x002a30                  _UART2_Read
+                  0x002a66                  _UART2_ReadBuffer
+                  0x002bc4                  _UART2_ReceiveBufferIsEmpty
+                  0x002b66                  _UART2_ReceiveBufferSizeGet
+                  0x002bf4                  _UART2_StatusGet
+                  0x002b02                  _UART2_TransferStatusGet
+                  0x002bdc                  _UART2_TransmitBufferIsFull
+                  0x002b94                  _UART2_TransmitBufferSizeGet
+                  0x002a9a                  _UART2_Write
+                  0x002ad0                  _UART2_WriteBuffer
+                  0x002bfc                  _UART3_Initialize
+                  0x002d48                  _UART3_Peek
+                  0x002c3a                  _UART3_Read
+                  0x002c70                  _UART3_ReadBuffer
+                  0x002dce                  _UART3_ReceiveBufferIsEmpty
+                  0x002d70                  _UART3_ReceiveBufferSizeGet
+                  0x002dfe                  _UART3_StatusGet
+                  0x002d0c                  _UART3_TransferStatusGet
+                  0x002de6                  _UART3_TransmitBufferIsFull
+                  0x002d9e                  _UART3_TransmitBufferSizeGet
+                  0x002ca4                  _UART3_Write
+                  0x002cda                  _UART3_WriteBuffer
+                  0x002e06                  _UART4_Initialize
+                  0x002f52                  _UART4_Peek
+                  0x002e44                  _UART4_Read
+                  0x002e7a                  _UART4_ReadBuffer
+                  0x002fd8                  _UART4_ReceiveBufferIsEmpty
+                  0x002f7a                  _UART4_ReceiveBufferSizeGet
+                  0x003008                  _UART4_StatusGet
+                  0x002f16                  _UART4_TransferStatusGet
+                  0x002ff0                  _UART4_TransmitBufferIsFull
+                  0x002fa8                  _UART4_TransmitBufferSizeGet
+                  0x002eae                  _UART4_Write
+                  0x002ee4                  _UART4_WriteBuffer
                   0x0005fa                  __ADC1Interrupt
                   0x0003cc                  __AddressError
                   0x000896                  __DefaultInterrupt
@@ -701,17 +701,17 @@ External Symbols in Program Memory (by name):
                   0x000c62                  __sprintf_0
                   0x000c62                  __sprintf_cdnopsuxX
                   0x000c62                  __sprintf_s
-                  0x001b72                  _file_append
-                  0x001956                  _file_create
-                  0x001bb8                  _file_update_size
+                  0x001b78                  _file_append
+                  0x00195c                  _file_create
+                  0x001bbe                  _file_update_size
                   0x000c0c                  _isspace
-                  0x003648                  _main
+                  0x003658                  _main
                   0x00103a                  _memchr
                   0x000a46                  _memcpy
                   0x000a54                  _memset
-                  0x0017f4                  _mount_disk
-                  0x001b66                  _sector_close
-                  0x001b34                  _sector_open
+                  0x0017fa                  _mount_disk
+                  0x001b6c                  _sector_close
+                  0x001b3a                  _sector_open
                   0x000c36                  _strchr
                   0x000a62                  _strcpy
                   0x00104e                  _strcspn
@@ -960,7 +960,7 @@ __CONFIG1
 .comment
  *(.comment)
 
-.debug_info       0x000000       0xcc37
+.debug_info       0x000000       0xce08
  *(.debug_info)
  .debug_info      0x000000        0xf49 build/default/production/mcc_generated_files/uart1.o
  .debug_info      0x000f49       0x107a build/default/production/mcc_generated_files/interrupt_manager.o
@@ -977,15 +977,15 @@ __CONFIG1
  .debug_info      0x00882d        0xbe6 build/default/production/mcc_generated_files/adc1.o
  .debug_info      0x009413        0x8a3 build/default/production/mcc_generated_files/tmr1.o
  .debug_info      0x009cb6       0x1031 build/default/production/mcc_generated_files/i2c1.o
- .debug_info      0x00ace7        0x91b build/default/production/main.o
- .debug_info      0x00b602        0x5e9 build/default/production/obd.o
- .debug_info      0x00bbeb        0x29b build/default/production/gps.o
- .debug_info      0x00be86        0x598 build/default/production/gprs.o
- .debug_info      0x00c41e        0x4a2 build/default/production/fatfs.o
- .debug_info      0x00c8c0        0x377 build/default/production/sdcard.o
+ .debug_info      0x00ace7        0xaeb build/default/production/main.o
+ .debug_info      0x00b7d2        0x5e9 build/default/production/obd.o
+ .debug_info      0x00bdbb        0x29b build/default/production/gps.o
+ .debug_info      0x00c056        0x598 build/default/production/gprs.o
+ .debug_info      0x00c5ee        0x4a3 build/default/production/fatfs.o
+ .debug_info      0x00ca91        0x377 build/default/production/sdcard.o
  *(.gnu.linkonce.wi.*)
 
-.debug_abbrev     0x000000       0x1a05
+.debug_abbrev     0x000000       0x1a62
  *(.debug_abbrev)
  .debug_abbrev    0x000000        0x1d5 build/default/production/mcc_generated_files/uart1.o
  .debug_abbrev    0x0001d5         0xa7 build/default/production/mcc_generated_files/interrupt_manager.o
@@ -1002,14 +1002,14 @@ __CONFIG1
  .debug_abbrev    0x000efd        0x165 build/default/production/mcc_generated_files/adc1.o
  .debug_abbrev    0x001062        0x15b build/default/production/mcc_generated_files/tmr1.o
  .debug_abbrev    0x0011bd        0x212 build/default/production/mcc_generated_files/i2c1.o
- .debug_abbrev    0x0013cf        0x17e build/default/production/main.o
- .debug_abbrev    0x00154d        0x14a build/default/production/obd.o
- .debug_abbrev    0x001697         0x8b build/default/production/gps.o
- .debug_abbrev    0x001722        0x10f build/default/production/gprs.o
- .debug_abbrev    0x001831         0xd8 build/default/production/fatfs.o
- .debug_abbrev    0x001909         0xfc build/default/production/sdcard.o
+ .debug_abbrev    0x0013cf        0x1c6 build/default/production/main.o
+ .debug_abbrev    0x001595        0x14a build/default/production/obd.o
+ .debug_abbrev    0x0016df         0x8b build/default/production/gps.o
+ .debug_abbrev    0x00176a        0x10f build/default/production/gprs.o
+ .debug_abbrev    0x001879         0xed build/default/production/fatfs.o
+ .debug_abbrev    0x001966         0xfc build/default/production/sdcard.o
 
-.debug_line       0x000000       0x188c
+.debug_line       0x000000       0x18a2
  *(.debug_line)
  .debug_line      0x000000        0x1ab build/default/production/mcc_generated_files/uart1.o
  .debug_line      0x0001ab         0xc6 build/default/production/mcc_generated_files/interrupt_manager.o
@@ -1026,14 +1026,14 @@ __CONFIG1
  .debug_line      0x000f5f        0x13c build/default/production/mcc_generated_files/adc1.o
  .debug_line      0x00109b        0x140 build/default/production/mcc_generated_files/tmr1.o
  .debug_line      0x0011db        0x1eb build/default/production/mcc_generated_files/i2c1.o
- .debug_line      0x0013c6        0x11d build/default/production/main.o
- .debug_line      0x0014e3         0xb3 build/default/production/obd.o
- .debug_line      0x001596         0x50 build/default/production/gps.o
- .debug_line      0x0015e6         0xf7 build/default/production/gprs.o
- .debug_line      0x0016dd         0xba build/default/production/fatfs.o
- .debug_line      0x001797         0xf5 build/default/production/sdcard.o
+ .debug_line      0x0013c6        0x123 build/default/production/main.o
+ .debug_line      0x0014e9         0xb3 build/default/production/obd.o
+ .debug_line      0x00159c         0x50 build/default/production/gps.o
+ .debug_line      0x0015ec         0xf7 build/default/production/gprs.o
+ .debug_line      0x0016e3         0xc4 build/default/production/fatfs.o
+ .debug_line      0x0017a7         0xfb build/default/production/sdcard.o
 
-.debug_frame      0x000000       0x1608
+.debug_frame      0x000000       0x160e
  *(.debug_frame)
  .debug_frame     0x000000        0x1d6 build/default/production/mcc_generated_files/uart1.o
  .debug_frame     0x0001d6         0x30 build/default/production/mcc_generated_files/interrupt_manager.o
@@ -1050,14 +1050,14 @@ __CONFIG1
  .debug_frame     0x000b96         0xfc build/default/production/mcc_generated_files/adc1.o
  .debug_frame     0x000c92        0x188 build/default/production/mcc_generated_files/tmr1.o
  .debug_frame     0x000e1a        0x188 build/default/production/mcc_generated_files/i2c1.o
- .debug_frame     0x000fa2        0x110 build/default/production/main.o
- .debug_frame     0x0010b2        0x1f0 build/default/production/obd.o
- .debug_frame     0x0012a2         0x4c build/default/production/gps.o
- .debug_frame     0x0012ee        0x1d4 build/default/production/gprs.o
- .debug_frame     0x0014c2         0xc2 build/default/production/fatfs.o
- .debug_frame     0x001584         0x84 build/default/production/sdcard.o
+ .debug_frame     0x000fa2        0x116 build/default/production/main.o
+ .debug_frame     0x0010b8        0x1f0 build/default/production/obd.o
+ .debug_frame     0x0012a8         0x4c build/default/production/gps.o
+ .debug_frame     0x0012f4        0x1d4 build/default/production/gprs.o
+ .debug_frame     0x0014c8         0xc2 build/default/production/fatfs.o
+ .debug_frame     0x00158a         0x84 build/default/production/sdcard.o
 
-.debug_str        0x000000        0x53d
+.debug_str        0x000000        0x550
  *(.debug_str)
  .debug_str       0x000000         0x30 build/default/production/mcc_generated_files/uart1.o
  .debug_str       0x000030         0x5f build/default/production/mcc_generated_files/interrupt_manager.o
@@ -1072,11 +1072,11 @@ __CONFIG1
  .debug_str       0x0002d7         0x3d build/default/production/mcc_generated_files/adc1.o
  .debug_str       0x000314         0x1c build/default/production/mcc_generated_files/tmr1.o
  .debug_str       0x000330         0x53 build/default/production/mcc_generated_files/i2c1.o
- .debug_str       0x000383         0x3d build/default/production/main.o
- .debug_str       0x0003c0         0x43 build/default/production/obd.o
- .debug_str       0x000403         0x18 build/default/production/gprs.o
- .debug_str       0x00041b         0xf1 build/default/production/fatfs.o
- .debug_str       0x00050c         0x31 build/default/production/sdcard.o
+ .debug_str       0x000383         0x50 build/default/production/main.o
+ .debug_str       0x0003d3         0x43 build/default/production/obd.o
+ .debug_str       0x000416         0x18 build/default/production/gprs.o
+ .debug_str       0x00042e         0xf1 build/default/production/fatfs.o
+ .debug_str       0x00051f         0x31 build/default/production/sdcard.o
 
 .debug_loc
  *(.debug_loc)
@@ -2405,7 +2405,7 @@ LOAD default_isr
 LOAD data_init
 
 .debug_pubtypes
-                  0x0001f8        0xd6b
+                  0x0001f8        0xd8a
  .debug_pubtypes
                   0x0001f8        0x113 build/default/production/mcc_generated_files/uart1.o
  .debug_pubtypes
@@ -2437,134 +2437,134 @@ LOAD data_init
  .debug_pubtypes
                   0x000d32        0x13c build/default/production/mcc_generated_files/i2c1.o
  .debug_pubtypes
-                  0x000e6e         0x82 build/default/production/main.o
+                  0x000e6e         0xa1 build/default/production/main.o
  .debug_pubtypes
-                  0x000ef0         0x2b build/default/production/obd.o
+                  0x000f0f         0x2b build/default/production/obd.o
  .debug_pubtypes
-                  0x000f1b         0x12 build/default/production/gps.o
+                  0x000f3a         0x12 build/default/production/gps.o
  .debug_pubtypes
-                  0x000f2d         0x12 build/default/production/gprs.o
+                  0x000f4c         0x12 build/default/production/gprs.o
  .debug_pubtypes
-                  0x000f3f         0x12 build/default/production/fatfs.o
+                  0x000f5e         0x12 build/default/production/fatfs.o
  .debug_pubtypes
-                  0x000f51         0x12 build/default/production/sdcard.o
+                  0x000f70         0x12 build/default/production/sdcard.o
 
 __c30_signature
-                  0x000f63        0x156
+                  0x000f82        0x156
  __c30_signature
-                  0x000f63          0x6 build/default/production/mcc_generated_files/uart1.o
+                  0x000f82          0x6 build/default/production/mcc_generated_files/uart1.o
  __c30_signature
-                  0x000f69          0x6 build/default/production/mcc_generated_files/interrupt_manager.o
+                  0x000f88          0x6 build/default/production/mcc_generated_files/interrupt_manager.o
  __c30_signature
-                  0x000f6f          0x6 build/default/production/mcc_generated_files/traps.o
+                  0x000f8e          0x6 build/default/production/mcc_generated_files/traps.o
  __c30_signature
-                  0x000f75          0x6 build/default/production/mcc_generated_files/uart2.o
+                  0x000f94          0x6 build/default/production/mcc_generated_files/uart2.o
  __c30_signature
-                  0x000f7b          0x6 build/default/production/mcc_generated_files/uart3.o
+                  0x000f9a          0x6 build/default/production/mcc_generated_files/uart3.o
  __c30_signature
-                  0x000f81          0x6 build/default/production/mcc_generated_files/uart4.o
+                  0x000fa0          0x6 build/default/production/mcc_generated_files/uart4.o
  __c30_signature
-                  0x000f87          0x6 build/default/production/mcc_generated_files/pin_manager.o
+                  0x000fa6          0x6 build/default/production/mcc_generated_files/pin_manager.o
  __c30_signature
-                  0x000f8d          0x6 build/default/production/mcc_generated_files/ext_int.o
+                  0x000fac          0x6 build/default/production/mcc_generated_files/ext_int.o
  __c30_signature
-                  0x000f93          0x6 build/default/production/mcc_generated_files/mcc.o
+                  0x000fb2          0x6 build/default/production/mcc_generated_files/mcc.o
  __c30_signature
-                  0x000f99          0x6 build/default/production/mcc_generated_files/rtcc.o
+                  0x000fb8          0x6 build/default/production/mcc_generated_files/rtcc.o
  __c30_signature
-                  0x000f9f          0x6 build/default/production/mcc_generated_files/spi1.o
+                  0x000fbe          0x6 build/default/production/mcc_generated_files/spi1.o
  __c30_signature
-                  0x000fa5          0x6 build/default/production/mcc_generated_files/spi2.o
+                  0x000fc4          0x6 build/default/production/mcc_generated_files/spi2.o
  __c30_signature
-                  0x000fab          0x6 build/default/production/mcc_generated_files/adc1.o
+                  0x000fca          0x6 build/default/production/mcc_generated_files/adc1.o
  __c30_signature
-                  0x000fb1          0x6 build/default/production/mcc_generated_files/tmr1.o
+                  0x000fd0          0x6 build/default/production/mcc_generated_files/tmr1.o
  __c30_signature
-                  0x000fb7          0x6 build/default/production/mcc_generated_files/i2c1.o
+                  0x000fd6          0x6 build/default/production/mcc_generated_files/i2c1.o
  __c30_signature
-                  0x000fbd          0x6 build/default/production/main.o
+                  0x000fdc          0x6 build/default/production/main.o
  __c30_signature
-                  0x000fc3          0x6 build/default/production/obd.o
+                  0x000fe2          0x6 build/default/production/obd.o
  __c30_signature
-                  0x000fc9          0x6 build/default/production/gps.o
+                  0x000fe8          0x6 build/default/production/gps.o
  __c30_signature
-                  0x000fcf          0x6 build/default/production/gprs.o
+                  0x000fee          0x6 build/default/production/gprs.o
  __c30_signature
-                  0x000fd5          0x6 build/default/production/fatfs.o
+                  0x000ff4          0x6 build/default/production/fatfs.o
  __c30_signature
-                  0x000fdb          0x6 build/default/production/sdcard.o
+                  0x000ffa          0x6 build/default/production/sdcard.o
  __c30_signature
-                  0x000fe1          0x6 c:/program files (x86)/microchip/xc16/v1.32/bin/bin/../../lib\liblega-pic30-elf.a(crt0_extended24.o)
+                  0x001000          0x6 c:/program files (x86)/microchip/xc16/v1.32/bin/bin/../../lib\liblega-pic30-elf.a(crt0_extended24.o)
  __c30_signature
-                  0x000fe7          0x6 c:/program files (x86)/microchip/xc16/v1.32/bin/bin/../../lib\liblega-pic30-elf.a(data_init_24.o)
+                  0x001006          0x6 c:/program files (x86)/microchip/xc16/v1.32/bin/bin/../../lib\liblega-pic30-elf.a(data_init_24.o)
  __c30_signature
-                  0x000fed          0x6 c:/program files (x86)/microchip/xc16/v1.32/bin/bin/../../lib\libm-elf.a(fgtge.daeo)
+                  0x00100c          0x6 c:/program files (x86)/microchip/xc16/v1.32/bin/bin/../../lib\libm-elf.a(fgtge.daeo)
  __c30_signature
-                  0x000ff3          0x6 c:/program files (x86)/microchip/xc16/v1.32/bin/bin/../../lib\libm-elf.a(floatunsisf.daeo)
+                  0x001012          0x6 c:/program files (x86)/microchip/xc16/v1.32/bin/bin/../../lib\libm-elf.a(floatunsisf.daeo)
  __c30_signature
-                  0x000ff9          0x6 c:/program files (x86)/microchip/xc16/v1.32/bin/bin/../../lib\libm-elf.a(mulsf3.daeo)
+                  0x001018          0x6 c:/program files (x86)/microchip/xc16/v1.32/bin/bin/../../lib\libm-elf.a(mulsf3.daeo)
  __c30_signature
-                  0x000fff          0x6 c:/program files (x86)/microchip/xc16/v1.32/bin/bin/../../lib\libm-elf.a(fcompare.daeo)
+                  0x00101e          0x6 c:/program files (x86)/microchip/xc16/v1.32/bin/bin/../../lib\libm-elf.a(fcompare.daeo)
  __c30_signature
-                  0x001005          0x6 c:/program files (x86)/microchip/xc16/v1.32/bin/bin/../../lib\libm-elf.a(floatundisf.daeo)
+                  0x001024          0x6 c:/program files (x86)/microchip/xc16/v1.32/bin/bin/../../lib\libm-elf.a(floatundisf.daeo)
  __c30_signature
-                  0x00100b          0x6 c:/program files (x86)/microchip/xc16/v1.32/bin/bin/../../lib\libm-elf.a(fpack.daeo)
+                  0x00102a          0x6 c:/program files (x86)/microchip/xc16/v1.32/bin/bin/../../lib\libm-elf.a(fpack.daeo)
  __c30_signature
-                  0x001011          0x6 c:/program files (x86)/microchip/xc16/v1.32/bin/bin/../../lib\libm-elf.a(funpack2.daeo)
+                  0x001030          0x6 c:/program files (x86)/microchip/xc16/v1.32/bin/bin/../../lib\libm-elf.a(funpack2.daeo)
  __c30_signature
-                  0x001017          0x6 c:/program files (x86)/microchip/xc16/v1.32/bin/bin/../../lib\libm-elf.a(futil.daeo)
+                  0x001036          0x6 c:/program files (x86)/microchip/xc16/v1.32/bin/bin/../../lib\libm-elf.a(futil.daeo)
  __c30_signature
-                  0x00101d          0x6 c:/program files (x86)/microchip/xc16/v1.32/bin/bin/../../lib\libm-elf.a(funpack.daeo)
+                  0x00103c          0x6 c:/program files (x86)/microchip/xc16/v1.32/bin/bin/../../lib\libm-elf.a(funpack.daeo)
  __c30_signature
-                  0x001023          0x6 c:/program files (x86)/microchip/xc16/v1.32/bin/bin/../../lib\liblega-c-elf.a(memcpy.DA_eo)
+                  0x001042          0x6 c:/program files (x86)/microchip/xc16/v1.32/bin/bin/../../lib\liblega-c-elf.a(memcpy.DA_eo)
  __c30_signature
-                  0x001029          0x6 c:/program files (x86)/microchip/xc16/v1.32/bin/bin/../../lib\liblega-c-elf.a(memset.DA_eo)
+                  0x001048          0x6 c:/program files (x86)/microchip/xc16/v1.32/bin/bin/../../lib\liblega-c-elf.a(memset.DA_eo)
  __c30_signature
-                  0x00102f          0x6 c:/program files (x86)/microchip/xc16/v1.32/bin/bin/../../lib\liblega-c-elf.a(strcpy.DA_eo)
+                  0x00104e          0x6 c:/program files (x86)/microchip/xc16/v1.32/bin/bin/../../lib\liblega-c-elf.a(strcpy.DA_eo)
  __c30_signature
-                  0x001035          0x6 c:/program files (x86)/microchip/xc16/v1.32/bin/bin/../../lib\liblega-c-elf.a(strlen.DA_eo)
+                  0x001054          0x6 c:/program files (x86)/microchip/xc16/v1.32/bin/bin/../../lib\liblega-c-elf.a(strlen.DA_eo)
  __c30_signature
-                  0x00103b          0x6 c:/program files (x86)/microchip/xc16/v1.32/bin/bin/../../lib\liblega-c-elf.a(strstr.DA_eo)
+                  0x00105a          0x6 c:/program files (x86)/microchip/xc16/v1.32/bin/bin/../../lib\liblega-c-elf.a(strstr.DA_eo)
  __c30_signature
-                  0x001041          0x6 c:/program files (x86)/microchip/xc16/v1.32/bin/bin/../../lib\liblega-c-elf.a(strtok.DA_eo)
+                  0x001060          0x6 c:/program files (x86)/microchip/xc16/v1.32/bin/bin/../../lib\liblega-c-elf.a(strtok.DA_eo)
  __c30_signature
-                  0x001047          0x6 c:/program files (x86)/microchip/xc16/v1.32/bin/bin/../../lib\liblega-c-elf.a(xstoul.DA_eo)
+                  0x001066          0x6 c:/program files (x86)/microchip/xc16/v1.32/bin/bin/../../lib\liblega-c-elf.a(xstoul.DA_eo)
  __c30_signature
-                  0x00104d          0x6 c:/program files (x86)/microchip/xc16/v1.32/bin/bin/../../lib\liblega-c-elf.a(isspace.DA_elso)
+                  0x00106c          0x6 c:/program files (x86)/microchip/xc16/v1.32/bin/bin/../../lib\liblega-c-elf.a(isspace.DA_elso)
  __c30_signature
-                  0x001053          0x6 c:/program files (x86)/microchip/xc16/v1.32/bin/bin/../../lib\liblega-c-elf.a(tolower.DA_elso)
+                  0x001072          0x6 c:/program files (x86)/microchip/xc16/v1.32/bin/bin/../../lib\liblega-c-elf.a(tolower.DA_elso)
  __c30_signature
-                  0x001059          0x6 c:/program files (x86)/microchip/xc16/v1.32/bin/bin/../../lib\liblega-c-elf.a(errno.DA_elo)
+                  0x001078          0x6 c:/program files (x86)/microchip/xc16/v1.32/bin/bin/../../lib\liblega-c-elf.a(errno.DA_elo)
  __c30_signature
-                  0x00105f          0x6 c:/program files (x86)/microchip/xc16/v1.32/bin/bin/../../lib\liblega-c-elf.a(strchr.DA_elo)
+                  0x00107e          0x6 c:/program files (x86)/microchip/xc16/v1.32/bin/bin/../../lib\liblega-c-elf.a(strchr.DA_elo)
  __c30_signature
-                  0x001065          0x6 c:/program files (x86)/microchip/xc16/v1.32/bin/bin/../../lib\liblega-c-elf.a(sprintf_cdnopsuxX.DAeo)
+                  0x001084          0x6 c:/program files (x86)/microchip/xc16/v1.32/bin/bin/../../lib\liblega-c-elf.a(sprintf_cdnopsuxX.DAeo)
  __c30_signature
-                  0x00106b          0x6 c:/program files (x86)/microchip/xc16/v1.32/bin/bin/../../lib\liblega-c-elf.a(xprintf_cdnopsuxX.DAeo)
+                  0x00108a          0x6 c:/program files (x86)/microchip/xc16/v1.32/bin/bin/../../lib\liblega-c-elf.a(xprintf_cdnopsuxX.DAeo)
  __c30_signature
-                  0x001071          0x6 c:/program files (x86)/microchip/xc16/v1.32/bin/bin/../../lib\liblega-c-elf.a(xputfld_cdnopsuxX.DAeo)
+                  0x001090          0x6 c:/program files (x86)/microchip/xc16/v1.32/bin/bin/../../lib\liblega-c-elf.a(xputfld_cdnopsuxX.DAeo)
  __c30_signature
-                  0x001077          0x6 c:/program files (x86)/microchip/xc16/v1.32/bin/bin/../../lib\liblega-c-elf.a(memchr.DA_eo)
+                  0x001096          0x6 c:/program files (x86)/microchip/xc16/v1.32/bin/bin/../../lib\liblega-c-elf.a(memchr.DA_eo)
  __c30_signature
-                  0x00107d          0x6 c:/program files (x86)/microchip/xc16/v1.32/bin/bin/../../lib\liblega-c-elf.a(strcspn.DA_eo)
+                  0x00109c          0x6 c:/program files (x86)/microchip/xc16/v1.32/bin/bin/../../lib\liblega-c-elf.a(strcspn.DA_eo)
  __c30_signature
-                  0x001083          0x6 c:/program files (x86)/microchip/xc16/v1.32/bin/bin/../../lib\liblega-c-elf.a(strspn.DA_eo)
+                  0x0010a2          0x6 c:/program files (x86)/microchip/xc16/v1.32/bin/bin/../../lib\liblega-c-elf.a(strspn.DA_eo)
  __c30_signature
-                  0x001089          0x6 c:/program files (x86)/microchip/xc16/v1.32/bin/bin/../../lib\liblega-c-elf.a(xlitob.DA_eo)
+                  0x0010a8          0x6 c:/program files (x86)/microchip/xc16/v1.32/bin/bin/../../lib\liblega-c-elf.a(xlitob.DA_eo)
  __c30_signature
-                  0x00108f          0x6 c:/program files (x86)/microchip/xc16/v1.32/bin/bin/../../lib\liblega-c-elf.a(xputtxt.DA_eo)
+                  0x0010ae          0x6 c:/program files (x86)/microchip/xc16/v1.32/bin/bin/../../lib\liblega-c-elf.a(xputtxt.DA_eo)
  __c30_signature
-                  0x001095          0x6 c:/program files (x86)/microchip/xc16/v1.32/bin/bin/../../lib\liblega-c-elf.a(xvacopy.DA_eo)
+                  0x0010b4          0x6 c:/program files (x86)/microchip/xc16/v1.32/bin/bin/../../lib\liblega-c-elf.a(xvacopy.DA_eo)
  __c30_signature
-                  0x00109b          0x6 c:/program files (x86)/microchip/xc16/v1.32/bin/bin/../../lib\libm-elf.a(divsi3.daeo)
+                  0x0010ba          0x6 c:/program files (x86)/microchip/xc16/v1.32/bin/bin/../../lib\libm-elf.a(divsi3.daeo)
  __c30_signature
-                  0x0010a1          0x6 c:/program files (x86)/microchip/xc16/v1.32/bin/bin/../../lib\libm-elf.a(udivsi3.daeo)
+                  0x0010c0          0x6 c:/program files (x86)/microchip/xc16/v1.32/bin/bin/../../lib\libm-elf.a(udivsi3.daeo)
  __c30_signature
-                  0x0010a7          0x6 c:/program files (x86)/microchip/xc16/v1.32/bin/bin/../../lib\libm-elf.a(umodsi3.daeo)
+                  0x0010c6          0x6 c:/program files (x86)/microchip/xc16/v1.32/bin/bin/../../lib\libm-elf.a(umodsi3.daeo)
  __c30_signature
-                  0x0010ad          0x6 c:/program files (x86)/microchip/xc16/v1.32/bin/bin/../../lib\libm-elf.a(mulsi3.daeo)
+                  0x0010cc          0x6 c:/program files (x86)/microchip/xc16/v1.32/bin/bin/../../lib\libm-elf.a(mulsi3.daeo)
  __c30_signature
-                  0x0010b3          0x6 c:/program files (x86)/microchip/xc16/v1.32/bin/bin/../../lib\libm-elf.a(divmoddi3.daeo)
+                  0x0010d2          0x6 c:/program files (x86)/microchip/xc16/v1.32/bin/bin/../../lib\libm-elf.a(divmoddi3.daeo)
 
 .nbss               0x0800         0x4c
  .nbss              0x0800         0x34 build/default/production/fatfs.o
@@ -2752,184 +2752,184 @@ __c30_signature
  .ivt._MI2C1Interrupt
                   0x000036          0x2 build/default/production/mcc_generated_files/i2c1.o
 
-.const              0x96be        0x136 load address 0x0016be  
+.const              0x96be        0x13c load address 0x0016be  
  .const             0x96be         0xb4 build/default/production/gprs.o
- .const             0x9772         0x42 build/default/production/main.o
- .const             0x97b4         0x40 build/default/production/obd.o
+ .const             0x9772         0x48 build/default/production/main.o
+ .const             0x97ba         0x40 build/default/production/obd.o
 
-.text             0x0017f4       0x2182
- .text            0x0017f4        0x41a build/default/production/fatfs.o
-                  0x0017f4                  _mount_disk
-                  0x001956                  _file_create
-                  0x001b34                  _sector_open
-                  0x001b66                  _sector_close
-                  0x001b72                  _file_append
-                  0x001bb8                  _file_update_size
- .text            0x001c0e        0x3fc build/default/production/gprs.o
-                  0x001c0e                  _ConfigGprsPort
-                  0x001c16                  _Gprs_SendMessageReadResponse
-                  0x001c3c                  _CheckSIM
-                  0x001c86                  _CheckNetwork
-                  0x001cd0                  _CheckSignalQuality
-                  0x001d30                  _RetrieveNetworkOperator
-                  0x001d7a                  _EstablishGprsConnection
-                  0x001dc4                  _ConnectWithOurServer
-                  0x001e0e                  _CheckServerConnection
-                  0x001e58                  _OpenGprsSession
-                  0x001ea2                  _CloseGprsSession
-                  0x001eec                  _CloseGprsConnection
-                  0x001f36                  _GprsStartSequence
-                  0x001f8e                  _GprsReconnectSequence
-                  0x001fc8                  _GprsCloseSequence
-                  0x001fe4                  _SendDataToGprs
- .text            0x00200a        0x2f6 build/default/production/obd.o
-                  0x00200a                  _ConfigObdPort
-                  0x002012                  _Obd_SendMessageReadResponse
-                  0x002032                  _RequestDataFromOBD
-                  0x002056                  _ConnectWithObdInterpreter
-                  0x0020a6                  _ReadSpeedFromOBD
-                  0x0020f4                  _ReadRpmFromOBD
-                  0x00211e                  _ReadTemperatureFromOBD
-                  0x00216c                  _ReadThrottleFromOBD
-                  0x0021ba                  _ReadDTCsFromOBD
-                  0x002246                  _CleanDtcsFromOBD
-                  0x002264                  _ReadVINFromOBD
-                  0x0022b2                  _ReadPressureFromOBD
- .text            0x002300        0x2c6 build/default/production/mcc_generated_files/rtcc.o
-                  0x002300                  _RTCC_Initialize
-                  0x00233c                  _RTCC_TimeReset
-                  0x002352                  _RTCC_TimeGet
-                  0x002404                  _RTCC_TimeSet
-                  0x002488                  _RTCC_BCDTimeGet
-                  0x002522                  _RTCC_BCDTimeSet
- .text            0x0025c6        0x21c build/default/production/sdcard.o
-                  0x0025c6                  _SDcard_init
-                  0x0026a2                  _SDcard_read_block
-                  0x00271c                  _SDcard_write_block
-                  0x0027a2                  _SDcard_get_response
- .text            0x0027e2        0x20a build/default/production/mcc_generated_files/uart1.o
-                  0x0027e2                  _UART1_Initialize
-                  0x002820                  _UART1_Read
-                  0x002856                  _UART1_ReadBuffer
-                  0x00288a                  _UART1_Write
-                  0x0028c0                  _UART1_WriteBuffer
-                  0x0028f2                  _UART1_TransferStatusGet
-                  0x00292e                  _UART1_Peek
-                  0x002956                  _UART1_ReceiveBufferSizeGet
-                  0x002984                  _UART1_TransmitBufferSizeGet
-                  0x0029b4                  _UART1_ReceiveBufferIsEmpty
-                  0x0029cc                  _UART1_TransmitBufferIsFull
-                  0x0029e4                  _UART1_StatusGet
- .text            0x0029ec        0x20a build/default/production/mcc_generated_files/uart2.o
-                  0x0029ec                  _UART2_Initialize
-                  0x002a2a                  _UART2_Read
-                  0x002a60                  _UART2_ReadBuffer
-                  0x002a94                  _UART2_Write
-                  0x002aca                  _UART2_WriteBuffer
-                  0x002afc                  _UART2_TransferStatusGet
-                  0x002b38                  _UART2_Peek
-                  0x002b60                  _UART2_ReceiveBufferSizeGet
-                  0x002b8e                  _UART2_TransmitBufferSizeGet
-                  0x002bbe                  _UART2_ReceiveBufferIsEmpty
-                  0x002bd6                  _UART2_TransmitBufferIsFull
-                  0x002bee                  _UART2_StatusGet
- .text            0x002bf6        0x20a build/default/production/mcc_generated_files/uart3.o
-                  0x002bf6                  _UART3_Initialize
-                  0x002c34                  _UART3_Read
-                  0x002c6a                  _UART3_ReadBuffer
-                  0x002c9e                  _UART3_Write
-                  0x002cd4                  _UART3_WriteBuffer
-                  0x002d06                  _UART3_TransferStatusGet
-                  0x002d42                  _UART3_Peek
-                  0x002d6a                  _UART3_ReceiveBufferSizeGet
-                  0x002d98                  _UART3_TransmitBufferSizeGet
-                  0x002dc8                  _UART3_ReceiveBufferIsEmpty
-                  0x002de0                  _UART3_TransmitBufferIsFull
-                  0x002df8                  _UART3_StatusGet
- .text            0x002e00        0x20a build/default/production/mcc_generated_files/uart4.o
-                  0x002e00                  _UART4_Initialize
-                  0x002e3e                  _UART4_Read
-                  0x002e74                  _UART4_ReadBuffer
-                  0x002ea8                  _UART4_Write
-                  0x002ede                  _UART4_WriteBuffer
-                  0x002f10                  _UART4_TransferStatusGet
-                  0x002f4c                  _UART4_Peek
-                  0x002f74                  _UART4_ReceiveBufferSizeGet
-                  0x002fa2                  _UART4_TransmitBufferSizeGet
-                  0x002fd2                  _UART4_ReceiveBufferIsEmpty
-                  0x002fea                  _UART4_TransmitBufferIsFull
-                  0x003002                  _UART4_StatusGet
- .text            0x00300a        0x1e2 build/default/production/mcc_generated_files/i2c1.o
-                  0x00300a                  _I2C1_Initialize
-                  0x003040                  _I2C1_ErrorCountGet
-                  0x00308a                  _I2C1_MasterWrite
-                  0x0030bc                  _I2C1_MasterRead
-                  0x0030ee                  _I2C1_MasterTRBInsert
-                  0x003166                  _I2C1_MasterReadTRBBuild
-                  0x003196                  _I2C1_MasterWriteTRBBuild
-                  0x0031ba                  _I2C1_MasterQueueIsEmpty
-                  0x0031d4                  _I2C1_MasterQueueIsFull
- .text            0x0031ec        0x1d6 build/default/production/mcc_generated_files/spi1.o
-                  0x0031ec                  _SPI1_Initialize
-                  0x0031fe                  _SPI1_Exchange
-                  0x003266                  _SPI1_ExchangeBuffer
-                  0x003380                  _SPI1_Exchange8bit
-                  0x003390                  _SPI1_Exchange8bitBuffer
-                  0x0033a4                  _SPI1_TransferModeGet
-                  0x0033ba                  _SPI1_StatusGet
- .text            0x0033c2        0x1d6 build/default/production/mcc_generated_files/spi2.o
-                  0x0033c2                  _SPI2_Initialize
-                  0x0033d4                  _SPI2_Exchange
-                  0x00343c                  _SPI2_ExchangeBuffer
-                  0x003556                  _SPI2_Exchange8bit
-                  0x003566                  _SPI2_Exchange8bitBuffer
-                  0x00357a                  _SPI2_TransferModeGet
-                  0x003590                  _SPI2_StatusGet
- .text            0x003598        0x190 build/default/production/main.o
-                  0x003598                  _GoToSleep
-                  0x0035a6                  _ReStartSystem
-                  0x0035be                  _IsOnTrip
-                  0x0035ea                  _MeasureIgnitionLevel
-                  0x00361e                  _StoreTripData
-                  0x00362a                  _SendTripData
-                  0x003640                  _RequestConfigurationFromHost
-                  0x003648                  _main
- .text            0x003728        0x146 build/default/production/mcc_generated_files/pin_manager.o
-                  0x003728                  _PIN_MANAGER_Initialize
- .text            0x00386e        0x108 build/default/production/gps.o
-                  0x00386e                  _ConfigGpsPort
-                  0x003876                  _ReadGpsGprmcCommand
+.text             0x0017fa       0x21aa
+ .text            0x0017fa        0x41a build/default/production/fatfs.o
+                  0x0017fa                  _mount_disk
+                  0x00195c                  _file_create
+                  0x001b3a                  _sector_open
+                  0x001b6c                  _sector_close
+                  0x001b78                  _file_append
+                  0x001bbe                  _file_update_size
+ .text            0x001c14        0x3fc build/default/production/gprs.o
+                  0x001c14                  _ConfigGprsPort
+                  0x001c1c                  _Gprs_SendMessageReadResponse
+                  0x001c42                  _CheckSIM
+                  0x001c8c                  _CheckNetwork
+                  0x001cd6                  _CheckSignalQuality
+                  0x001d36                  _RetrieveNetworkOperator
+                  0x001d80                  _EstablishGprsConnection
+                  0x001dca                  _ConnectWithOurServer
+                  0x001e14                  _CheckServerConnection
+                  0x001e5e                  _OpenGprsSession
+                  0x001ea8                  _CloseGprsSession
+                  0x001ef2                  _CloseGprsConnection
+                  0x001f3c                  _GprsStartSequence
+                  0x001f94                  _GprsReconnectSequence
+                  0x001fce                  _GprsCloseSequence
+                  0x001fea                  _SendDataToGprs
+ .text            0x002010        0x2f6 build/default/production/obd.o
+                  0x002010                  _ConfigObdPort
+                  0x002018                  _Obd_SendMessageReadResponse
+                  0x002038                  _RequestDataFromOBD
+                  0x00205c                  _ConnectWithObdInterpreter
+                  0x0020ac                  _ReadSpeedFromOBD
+                  0x0020fa                  _ReadRpmFromOBD
+                  0x002124                  _ReadTemperatureFromOBD
+                  0x002172                  _ReadThrottleFromOBD
+                  0x0021c0                  _ReadDTCsFromOBD
+                  0x00224c                  _CleanDtcsFromOBD
+                  0x00226a                  _ReadVINFromOBD
+                  0x0022b8                  _ReadPressureFromOBD
+ .text            0x002306        0x2c6 build/default/production/mcc_generated_files/rtcc.o
+                  0x002306                  _RTCC_Initialize
+                  0x002342                  _RTCC_TimeReset
+                  0x002358                  _RTCC_TimeGet
+                  0x00240a                  _RTCC_TimeSet
+                  0x00248e                  _RTCC_BCDTimeGet
+                  0x002528                  _RTCC_BCDTimeSet
+ .text            0x0025cc        0x21c build/default/production/sdcard.o
+                  0x0025cc                  _SDcard_init
+                  0x0026a8                  _SDcard_read_block
+                  0x002722                  _SDcard_write_block
+                  0x0027a8                  _SDcard_get_response
+ .text            0x0027e8        0x20a build/default/production/mcc_generated_files/uart1.o
+                  0x0027e8                  _UART1_Initialize
+                  0x002826                  _UART1_Read
+                  0x00285c                  _UART1_ReadBuffer
+                  0x002890                  _UART1_Write
+                  0x0028c6                  _UART1_WriteBuffer
+                  0x0028f8                  _UART1_TransferStatusGet
+                  0x002934                  _UART1_Peek
+                  0x00295c                  _UART1_ReceiveBufferSizeGet
+                  0x00298a                  _UART1_TransmitBufferSizeGet
+                  0x0029ba                  _UART1_ReceiveBufferIsEmpty
+                  0x0029d2                  _UART1_TransmitBufferIsFull
+                  0x0029ea                  _UART1_StatusGet
+ .text            0x0029f2        0x20a build/default/production/mcc_generated_files/uart2.o
+                  0x0029f2                  _UART2_Initialize
+                  0x002a30                  _UART2_Read
+                  0x002a66                  _UART2_ReadBuffer
+                  0x002a9a                  _UART2_Write
+                  0x002ad0                  _UART2_WriteBuffer
+                  0x002b02                  _UART2_TransferStatusGet
+                  0x002b3e                  _UART2_Peek
+                  0x002b66                  _UART2_ReceiveBufferSizeGet
+                  0x002b94                  _UART2_TransmitBufferSizeGet
+                  0x002bc4                  _UART2_ReceiveBufferIsEmpty
+                  0x002bdc                  _UART2_TransmitBufferIsFull
+                  0x002bf4                  _UART2_StatusGet
+ .text            0x002bfc        0x20a build/default/production/mcc_generated_files/uart3.o
+                  0x002bfc                  _UART3_Initialize
+                  0x002c3a                  _UART3_Read
+                  0x002c70                  _UART3_ReadBuffer
+                  0x002ca4                  _UART3_Write
+                  0x002cda                  _UART3_WriteBuffer
+                  0x002d0c                  _UART3_TransferStatusGet
+                  0x002d48                  _UART3_Peek
+                  0x002d70                  _UART3_ReceiveBufferSizeGet
+                  0x002d9e                  _UART3_TransmitBufferSizeGet
+                  0x002dce                  _UART3_ReceiveBufferIsEmpty
+                  0x002de6                  _UART3_TransmitBufferIsFull
+                  0x002dfe                  _UART3_StatusGet
+ .text            0x002e06        0x20a build/default/production/mcc_generated_files/uart4.o
+                  0x002e06                  _UART4_Initialize
+                  0x002e44                  _UART4_Read
+                  0x002e7a                  _UART4_ReadBuffer
+                  0x002eae                  _UART4_Write
+                  0x002ee4                  _UART4_WriteBuffer
+                  0x002f16                  _UART4_TransferStatusGet
+                  0x002f52                  _UART4_Peek
+                  0x002f7a                  _UART4_ReceiveBufferSizeGet
+                  0x002fa8                  _UART4_TransmitBufferSizeGet
+                  0x002fd8                  _UART4_ReceiveBufferIsEmpty
+                  0x002ff0                  _UART4_TransmitBufferIsFull
+                  0x003008                  _UART4_StatusGet
+ .text            0x003010        0x1e2 build/default/production/mcc_generated_files/i2c1.o
+                  0x003010                  _I2C1_Initialize
+                  0x003046                  _I2C1_ErrorCountGet
+                  0x003090                  _I2C1_MasterWrite
+                  0x0030c2                  _I2C1_MasterRead
+                  0x0030f4                  _I2C1_MasterTRBInsert
+                  0x00316c                  _I2C1_MasterReadTRBBuild
+                  0x00319c                  _I2C1_MasterWriteTRBBuild
+                  0x0031c0                  _I2C1_MasterQueueIsEmpty
+                  0x0031da                  _I2C1_MasterQueueIsFull
+ .text            0x0031f2        0x1d6 build/default/production/mcc_generated_files/spi1.o
+                  0x0031f2                  _SPI1_Initialize
+                  0x003204                  _SPI1_Exchange
+                  0x00326c                  _SPI1_ExchangeBuffer
+                  0x003386                  _SPI1_Exchange8bit
+                  0x003396                  _SPI1_Exchange8bitBuffer
+                  0x0033aa                  _SPI1_TransferModeGet
+                  0x0033c0                  _SPI1_StatusGet
+ .text            0x0033c8        0x1d6 build/default/production/mcc_generated_files/spi2.o
+                  0x0033c8                  _SPI2_Initialize
+                  0x0033da                  _SPI2_Exchange
+                  0x003442                  _SPI2_ExchangeBuffer
+                  0x00355c                  _SPI2_Exchange8bit
+                  0x00356c                  _SPI2_Exchange8bitBuffer
+                  0x003580                  _SPI2_TransferModeGet
+                  0x003596                  _SPI2_StatusGet
+ .text            0x00359e        0x1b8 build/default/production/main.o
+                  0x00359e                  _GoToSleep
+                  0x0035ae                  _ReStartSystem
+                  0x0035c6                  _IsOnTrip
+                  0x0035f2                  _MeasureIgnitionLevel
+                  0x003626                  _StoreTripData
+                  0x00363a                  _SendTripData
+                  0x003650                  _RequestConfigurationFromHost
+                  0x003658                  _main
+ .text            0x003756        0x146 build/default/production/mcc_generated_files/pin_manager.o
+                  0x003756                  _PIN_MANAGER_Initialize
+ .text            0x00389c        0x108 build/default/production/gps.o
+                  0x00389c                  _ConfigGpsPort
+                  0x0038a4                  _ReadGpsGprmcCommand
 
-.dinit            0x003976         0xf0
- .dinit           0x003976         0xf0 data_init
+.dinit            0x0039a4         0xf0
+ .dinit           0x0039a4         0xf0 data_init
 
-.text             0x003a66        0x244
- .text            0x003a66         0xba build/default/production/mcc_generated_files/interrupt_manager.o
-                  0x003a66                  _INTERRUPT_Initialize
- .text            0x003b20         0x9e build/default/production/mcc_generated_files/tmr1.o
-                  0x003b20                  _TMR1_Initialize
-                  0x003b3a                  _TMR1_Period16BitSet
-                  0x003b4c                  _TMR1_Period16BitGet
-                  0x003b54                  _TMR1_Counter16BitSet
-                  0x003b66                  _TMR1_Counter16BitGet
-                  0x003b6e                  _TMR1_CallBack
-                  0x003b74                  _TMR1_Start
-                  0x003b84                  _TMR1_Stop
-                  0x003b8e                  _TMR1_GetElapsedThenClear
-                  0x003ba6                  _TMR1_SoftwareCounterGet
-                  0x003bb2                  _TMR1_SoftwareCounterClear
- .text            0x003bbe         0x92 build/default/production/mcc_generated_files/adc1.o
-                  0x003bbe                  _ADC1_Initialize
-                  0x003be2                  _ADC1_Start
-                  0x003bea                  _ADC1_Stop
-                  0x003bf2                  _ADC1_ConversionResultBufferGet
-                  0x003c24                  _ADC1_ConversionResultGet
-                  0x003c2c                  _ADC1_IsConversionComplete
-                  0x003c44                  _ADC1_ChannelSelect
- .text            0x003c50         0x3e build/default/production/mcc_generated_files/mcc.o
-                  0x003c50                  _SYSTEM_Initialize
-                  0x003c72                  _OSCILLATOR_Initialize
- .text            0x003c8e         0x16 build/default/production/mcc_generated_files/traps.o
-                  0x003c8e                  _TRAPS_halt_on_error
- .text            0x003ca4          0x6 build/default/production/mcc_generated_files/ext_int.o
-                  0x003ca4                  _EXT_INT_Initialize
+.text             0x003a94        0x244
+ .text            0x003a94         0xba build/default/production/mcc_generated_files/interrupt_manager.o
+                  0x003a94                  _INTERRUPT_Initialize
+ .text            0x003b4e         0x9e build/default/production/mcc_generated_files/tmr1.o
+                  0x003b4e                  _TMR1_Initialize
+                  0x003b68                  _TMR1_Period16BitSet
+                  0x003b7a                  _TMR1_Period16BitGet
+                  0x003b82                  _TMR1_Counter16BitSet
+                  0x003b94                  _TMR1_Counter16BitGet
+                  0x003b9c                  _TMR1_CallBack
+                  0x003ba2                  _TMR1_Start
+                  0x003bb2                  _TMR1_Stop
+                  0x003bbc                  _TMR1_GetElapsedThenClear
+                  0x003bd4                  _TMR1_SoftwareCounterGet
+                  0x003be0                  _TMR1_SoftwareCounterClear
+ .text            0x003bec         0x92 build/default/production/mcc_generated_files/adc1.o
+                  0x003bec                  _ADC1_Initialize
+                  0x003c10                  _ADC1_Start
+                  0x003c18                  _ADC1_Stop
+                  0x003c20                  _ADC1_ConversionResultBufferGet
+                  0x003c52                  _ADC1_ConversionResultGet
+                  0x003c5a                  _ADC1_IsConversionComplete
+                  0x003c72                  _ADC1_ChannelSelect
+ .text            0x003c7e         0x3e build/default/production/mcc_generated_files/mcc.o
+                  0x003c7e                  _SYSTEM_Initialize
+                  0x003ca0                  _OSCILLATOR_Initialize
+ .text            0x003cbc         0x16 build/default/production/mcc_generated_files/traps.o
+                  0x003cbc                  _TRAPS_halt_on_error
+ .text            0x003cd2          0x6 build/default/production/mcc_generated_files/ext_int.o
+                  0x003cd2                  _EXT_INT_Initialize
